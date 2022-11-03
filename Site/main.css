@@ -10,6 +10,20 @@ body{
     padding: 0;
 }
 
+.teste{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 700;
+    background: transparent;
+    transition: background-color 200ms;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 0px 0px 10px 10px;
+    
+}
+
 .navbar{
     display: flex;
     justify-content: space-between;
@@ -49,6 +63,8 @@ ul{
     border-radius: 30px;
     font-size:medium ;
     padding: 4px 10px;
+    color: black;
+    border: 2px solid red;
 }
 
 
@@ -78,7 +94,7 @@ ul{
 .banner .content{
     position: absolute;
     z-index: 1;
-    top: 23%;
+    top: 25%;
     left: 3%;
     color: white;
 }
@@ -174,7 +190,7 @@ html {
 
 .ef{
     background-image: url(./assets/red2.jpg);
-    padding: 100px 100px 600px 110px;
+    padding: 10px 100px 600px 110px;
     box-shadow: 0 1px 15px 15px rgba(158, 0, 0, 0.781);
     
 }
@@ -201,11 +217,17 @@ html {
     }
 
 
-    .footer{
-        
+    .footer{  
+        display: flex;
+        justify-content: center;
         background-image: url(./assets/carbon.jpg);
-        padding: 100px;
+        padding: 70px;
         box-shadow: 0 1px 15px 15px rgba(0, 0, 0, 1);
     }
 
-
+    .footertxt{
+        color: white;
+        font-size: 20px;
+        font-style: italic;
+        border-bottom: 1px solid #ffffff;
+    }
