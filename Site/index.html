@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="<link rel=" preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
@@ -15,17 +15,30 @@
 <body>
 
     <!-- NAVBAR -->
-    <div class="navbar">
-        <h1><a href="#banner">Essere Ferrari</a></h1>
-        <ul>
-            <p style="color: red;">|</p>
-            <li><a href="#esseref">O que é essere ferrari?</a></li>
-            <p style="color: red;">|</p>
-            <li><a href="#ef">Projeto EF</a></li>
-            <button style="background-color:rgb(255, 255, 255);" onclick="red()">Login</button>
-            <button style="border-color: red; border-style: solid; background-color: white;">Cadastre-se</button>
-
-        </ul>
+    <div class="tela">
+        <div class="verde">
+            <div class="branco">
+                <div class="vermelho">
+                    <div class="navbar">
+                        <div class="logo">
+                            <img src="./assets/ferrariwhite.png" alt="" width="100px">
+                        <p><a href="#banner">Essere Ferrari</a></p>
+                        </div>
+                        
+                        <ul>
+                            <li><a href="#esseref">O que é essere ferrari?</a></li>
+                            <p style="cursor:default;color: rgb(0, 255, 0);">|</p>
+                            <li><a href="#ef">Projeto EF</a></li>
+                            <p style="cursor:default;color: rgb(255, 255, 255);;">|</p>
+                            <li class="logcad"><a href="login.html">Login</a></li>
+                            <p style="cursor:default;color: red;">|</p>
+                            <li class="logcad"><a>Cadastre-se</a></li>
+                
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="it"></div>
 
@@ -95,13 +108,3 @@
 </body>
 
 </html>
-
-<script>
-    function red() {
-        window.location = "login.html"
-    }
-
-    function red2() {
-        window.location = "cadastro.html"
-    }
-</script>
