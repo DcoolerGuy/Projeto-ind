@@ -12,7 +12,6 @@ body{
 .banner{
     display: flex;
     flex-direction:row;
-    background-image: url(./assets/red2.jpg);
 }
 
 .navbar{
@@ -34,11 +33,11 @@ body{
 
 
 
-.back p{
-    color: white;
+.back b{
+    color: rgb(0, 0, 0);
     font-size: 30px;
     font-style: italic;
-    border-bottom: 3px solid rgb(0, 0, 0);
+    border-bottom: 3px solid rgb(255, 0, 0);
     border-radius: 5px;
 }
 
