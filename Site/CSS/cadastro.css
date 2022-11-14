@@ -6,6 +6,18 @@
     font-family: 'Barlow', sans-serif;
 }
 
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff0000;
+}
+
 body{
     padding: 0;
     margin: 0;
@@ -15,6 +27,7 @@ body{
 .banner{
     display: flex;
     flex-direction:row;
+    
 }
 
 .navbar{
@@ -32,6 +45,7 @@ body{
     flex-direction: column;
     height: 100vh;
     width: 50%;
+
 }
 
 
@@ -83,9 +97,15 @@ body{
     border-radius: 10px 0px 0px 10px;
 }
 
+a {
+    color: #ff0000;
+    text-align: center;
+    text-decoration: none;
+}
+
 .caixa_form button{
     border: 2px solid rgb(255, 0, 0);
-    border-radius: 15px;
+    border-radius: 13px;
     padding: 3px 10px 3px 10px;
     background-color: white;
     color: rgb(0, 0, 0);
@@ -94,36 +114,19 @@ body{
     
 }
 
-a {
-    color: #ffffff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
 .pos{
     margin-left: 50px;
-    margin-bottom: 100px;
+    margin-bottom: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    ;
-    width: 60%;
-    
-}
-
-.caixas{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
+    gap: 5px;
 }
 
 
 input{
     border:2px solid rgb(255, 0, 0);
     color: black;
-    border-radius: 15px;
-    padding: 7px 10px 7px 10px;
+    border-radius: 13px;
+    padding: 7px 5px 7px 5px;
 }

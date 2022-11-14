@@ -5,7 +5,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="content.css">
+    <link rel="stylesheet" href="./CSS/content.css">
+    <link rel="stylesheet" href="./CSS/gallery.min.css">
+    <link rel="stylesheet" href="./CSS/gallery.theme.css">
     <title>Essere Ferrari</title>
 </head>
 
@@ -15,7 +17,7 @@
 
     <div class="navbar">
         <div class="logo">
-            <img src="./assets/ferrariwhite.png" alt="" width="100px">
+            <img src="./CSS/assets/ferrariwhite.png" alt="" width="100px">
             <p><a href="#banner">Essere Ferrari</a></p>
         </div>
 
@@ -30,14 +32,36 @@
 
         </ul>
     </div>
-
-    <video src="./assets/ferrri499p.mp4" autoplay loop muted></video>
+    <div class="background">
+        <video src="./CSS/assets/ferrri499p.mp4" autoplay muted loop></video>
     </div>
     <div class="banner">
-        <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea, suscipit! Atque, fugit dolor voluptatum cum
-            expedita ullam reiciendis magni. Quibusdam obcaecati illum eligendi dolore debitis nulla quia consectetur
-            ullam magnam!</h2>
+        <h1 style="font-size: 50px;"><i>O Legado de um homem cheio de rivalidades</i></h1>
     </div>
-</body>
 
+        <div class="gallery autoplay items-3">
+            <div id="item-1" class="control-operator"></div>
+            <div id="item-2" class="control-operator"></div>
+            <div id="item-3" class="control-operator"></div>
+          
+            <figure class="item">
+              <h1><img src="./CSS/assets/gt403.jpg" alt="" width="100%"></h1>
+            </figure>
+          
+            <figure class="item">
+              <h1><img src="./CSS/assets/gt402.jpg" alt="" width="100%"></h1>
+            </figure>
+          
+            <figure class="item">
+              <h1><img src="./CSS/assets/gt40.jpg" alt="" width="100%"></h1>
+            </figure>
+          
+            <div class="controls">
+              <a href="#item-1" class="control-button">•</a>
+              <a href="#item-2" class="control-button">•</a>
+              <a href="#item-3" class="control-button">•</a>
+            </div>
+          </div>
+    </body>
+    
 </html>
