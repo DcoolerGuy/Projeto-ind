@@ -115,13 +115,34 @@ ul{
     box-shadow: 0 1px 20px 15px rgb(0, 0, 0);
 }
 
-.banner{
+.rivalries{
     margin-top: 30px;
     display: flex;
     flex-direction: column;
     align-items:center ;
     width: 100%;
-
-
 }
+
+.enzo{
+    display: flex;
+    flex-direction: column;
+    margin-top: 30px;
+}
+
+.enzo h1{
+    margin-left:455px;
+}
+
+.enzo p{
+    margin-left: 50px;
+}
+
+.enzo img{
+    position: absolute;
+    right: 0px;
+    top: 750px;
+    border:1px solid black;
+    box-shadow: 0 1px 10px 5px rgb(0, 0, 0);
+}
+
 
