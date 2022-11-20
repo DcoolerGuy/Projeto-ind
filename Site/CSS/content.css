@@ -1,11 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Mukta&display=swap');
 
-*{
-    font-family:'Barlow',sans-serif;
-    
+* {
+    font-family: 'Barlow', sans-serif;
+
 }
 
-body{
+h2 {
+    font-size: 50px;
+    font-style: italic;
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+body {
     margin: 0;
     padding: 0;
     background-image: url(./assets/whiteback.webp);
@@ -31,8 +38,8 @@ html {
 
 
 
-.logo{
-    position:relative;
+.logo {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -40,7 +47,7 @@ html {
     width: 320px;
 }
 
-.navbar{
+.navbar {
     background-color: transparent;
     display: flex;
     position: fixed;
@@ -54,15 +61,15 @@ html {
 }
 
 a {
-    position:relative;
+    position: relative;
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-ul{
-    position:relative;
+ul {
+    position: relative;
     width: 550px;
     background-color: transparent;
     display: flex;
@@ -74,16 +81,16 @@ ul{
 
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: red;
     font-style: italic;
 }
 
-.navbar button{
+.navbar button {
 
     cursor: pointer;
     border-radius: 30px;
-    font-size:medium ;
+    font-size: medium;
     padding: 4px 10px;
     color: black;
     border: 2px solid red;
@@ -91,32 +98,32 @@ ul{
 
 
 
-.logo a{
+.logo a {
     font-size: 25px;
     font-style: italic;
     color: white;
-    
+
 }
 
-.logo a:hover{
+.logo a:hover {
     font-size: 25px;
     font-style: italic;
     color: rgb(247, 0, 0);
 }
 
-.background{
+.background {
     height: 100vh;
     background-color: rgb(0, 0, 0);
 }
 
 
-.background video{
+.background video {
     width: 100%;
     height: 100%;
     box-shadow: 0 1px 20px 15px rgb(9, 9, 9);
 }
 
-.hist{
+.hist {
     margin-top: 50px;
     margin-bottom: 50px;
     display: flex;
@@ -125,74 +132,83 @@ ul{
     text-align: center;
 }
 
-.hist p{
+.hist p {
     width: 90%;
 }
 
-.enzo{
+.enzo {
+    background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
+    background-image: url(./assets/black-370118.png);
     color: #f0ebeb;
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 10px 10px 0px 0px;
     width: 100%;
-    /*background-image: url(./assets/carbon.jpg)*/;
-    
+    /*background-image: url(./assets/carbon.jpg)*/
+    ;
+
 }
 
-.gallery h1{
+.gallery h1 {
     font-size: 20px;
     color: white;
     font-style: italic;
 }
 
-.green{
+.green {
     border-radius: 10px;
     background-color: rgb(35, 197, 35);
     padding: 5px 0px 0px 0px;
     box-shadow: 0 8px 10px 15px rgb(9, 9, 9);
 }
-.white{
+
+.white {
     border-radius: 10px;
     background-color: #dcd7d7;
     padding: 5px 0px 0px 0px;
 }
-.red{
+
+.red {
     border-radius: 10px;
     background-color: red;
     padding: 5px 0px 0px 0px;
 }
-.black{
+
+.black {
     border-radius: 10px 10px 0px 0px;
     background-color: rgb(21, 21, 21);
     padding: 1px 0px 0px 0px;
 }
 
-.carousel .gallery{
-    width:100%;
+.carousel .gallery {
+    width: 100%;
     height: 100%;
 }
 
-.carousel{
+.carousel {
     display: flex;
     flex-direction: row;
-    
+
 }
 
-img{
-    border-radius: 20px;
-    
+img {
+    border-radius: 0px;
 }
 
-.lendasgt{
+.lendasgt {
     background-color: rgb(21, 21, 21);
+    background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
+    background-image: url(./assets/black-370118.png);
     padding: 5px 0px 5px 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.lendasrua{
+.lendasrua {
+    background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
+    background-image: url(./assets/black-370118.png);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -200,33 +216,58 @@ img{
     padding: 5px 0px 5px 0px;
 }
 
-.rivalries{
+.carousel3 {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.carousel4 .gallery {
+
+    height: 10%;
+}
+
+.f40 {
+    background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
+    background-image: url(./assets/black-370118.png);
     display: flex;
     flex-direction: column;
-    align-items:center ;
+    align-items: center;
+    background-color: rgb(21, 21, 21);
+    padding: 5px 0px 5px 0px;
+}
+
+.f1 {
+    background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
+    background-image: url(./assets/black-370118.png);
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0px 5px 0px;
+}
+
+.f1img {
+    display: flex;
+    flex-direction: row;
+}
+
+.f1img img {
+    width: 50%;
+    border-radius: 0;
+}
+
+.rivalries {
+    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    background-image: url(./assets/black-370118.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     background-color: rgb(21, 21, 21);
     /* background-image: url(./assets/carbon.jpg); */
 }
 
-.rivalries h2{
+.rivalries h2 {
     margin-top: 40px;
-}
-
-.carousel3{
-    display: flex;
-    flex-direction: row;
-}
-
-.carousel4 .gallery{
-
-    height: 10%;
-}
-
-.f40{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: rgb(21, 21, 21);
-    padding: 5px 0px 5px 0px;
 }
