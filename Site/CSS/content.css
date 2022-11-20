@@ -34,10 +34,6 @@ html {
     background-color: #ff0000;
 }
 
-
-
-
-
 .logo {
     position: relative;
     display: flex;
@@ -143,11 +139,10 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
     width: 100%;
-    ;
-
 }
+
 
 .gallery h1 {
     font-size: 20px;
@@ -158,26 +153,26 @@ ul {
 .green {
     border-radius: 10px;
     background-color: rgb(35, 197, 35);
-    padding: 5px 0px 0px 0px;
-    box-shadow: 0 8px 10px 15px rgb(9, 9, 9);
+    padding: 5px 0px 5px 0px;
+    box-shadow: 0 1px 15px 15px rgb(32, 32, 32);
 }
 
 .white {
     border-radius: 10px;
     background-color: #dcd7d7;
-    padding: 5px 0px 0px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 .red {
     border-radius: 10px;
     background-color: red;
-    padding: 5px 0px 0px 0px;
+    padding: 5px 0px 5px 0px;
 }
 
 .black {
-    border-radius: 10px 10px 0px 0px;
+    border-radius: 10px 10px 10px 10px;
     background-color: rgb(21, 21, 21);
-    padding: 1px 0px 0px 0px;
+    padding: 1px 0px 1px 0px;
 }
 
 .carousel .gallery {
@@ -189,10 +184,6 @@ ul {
     display: flex;
     flex-direction: row;
 
-}
-
-img {
-    border-radius: 0px;
 }
 
 .lendasgt {
@@ -264,6 +255,7 @@ img {
     align-items: center;
     width: 100%;
     background-color: rgb(21, 21, 21);
+    border-radius: 0px 0px 10px 10px;
 }
 
 .rivalries h2 {
@@ -271,23 +263,57 @@ img {
 }
 
 .favs{
-    background-image: url(./assets/black-370118grad.png);
+    /* background-image: url(./assets/black-370118grad.png); */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.ferraris{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin-bottom: 10px;
+.favs h2{
+    color: black;
+    border-bottom: 3px solid black;
 }
 
-.ferraris img{
-    width: 50%;
+.imagens{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.imagemb{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+}
+
+.favs img{
+    border-radius: 10px;
+    box-shadow: 0 1px 15px 15px rgb(67, 67, 67);
+    border: 2px solid white;
 }
 
 select{
-    
+    border: 2px solid rgb(244, 20, 20);
+    color: rgb(0,0, 0);
+    border-radius: 5px;
+    padding: 3px;
+    font-style: bold;
+    background-color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.favs button{
+    margin-top: 50px;
+    text-align: center;
+    color: #ffffff;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    font-style: bold;
+    font-size: 20px;
 }
