@@ -80,7 +80,6 @@ ul {
 
 .navbar a:hover {
     color: red;
-    font-style: italic;
 }
 
 .navbar button {
@@ -185,7 +184,12 @@ ul {
 .carousel {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+}
 
+.carousel .gallery img{
+    width: 95%;
+    border-radius: 10px;
 }
 
 .lendasgt {
@@ -198,6 +202,10 @@ ul {
     align-items: center;
 }
 
+.lendasgt .gallery img{
+    border-left: 0px;
+}
+
 .lendasrua {
     background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
     background-image: url(./assets/black-370118grad.png);
@@ -208,14 +216,23 @@ ul {
     padding: 5px 0px 5px 0px;
 }
 
+
 .carousel3 {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
 
-.carousel4 .gallery {
+.carousel3 .gallery img{
+    width: 95%;
+    border-radius: 10px;
+}
 
+.carouselb .gallery img{
+    border-left: 0px;
+}
+
+.carousel4 .gallery {
     height: 10%;
 }
 
@@ -227,6 +244,10 @@ ul {
     align-items: center;
     background-color: rgb(21, 21, 21);
     padding: 5px 0px 5px 0px;
+}
+
+.f40 .gallery img{
+    border-left: 0px;
 }
 
 .f1 {
@@ -242,11 +263,16 @@ ul {
 .f1img {
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }
 
 .f1img img {
-    width: 50%;
+    width: 48%;
     border-radius: 0;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 1px 15px 5px rgb(123, 123, 123);
 }
 
 .rivalries {
@@ -260,8 +286,17 @@ ul {
     border-radius: 0px 0px 10px 10px;
 }
 
+.rivalries .gallery img{
+    border-left: 0px;
+}
+
 .rivalries h2 {
     margin-top: 40px;
+}
+
+.gallery img{
+    border: 1px solid white;
+    box-shadow: 0 1px 15px 5px rgb(123, 123, 123);
 }
 
 .favs {

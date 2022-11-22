@@ -156,7 +156,7 @@
               </div>
             </div>
             <!-- berlinetta -->
-            <div class="carousel3">
+            <div class="carouselb">
               <div class="gallery autoplay items-3">
                 <div id="item-1" class="control-operator"></div>
                 <div id="item-2" class="control-operator"></div>
@@ -198,7 +198,7 @@
                 </figure>
 
                 <figure class="item">
-                  <h1><img src="./CSS/assets/f405.webp" alt="" width="100%"></h1>
+                  <h1><img src="./CSS/assets/f40red.jpg="" width="100%"></h1>
                 </figure>
 
                 <figure class="item">
@@ -246,9 +246,9 @@
   </div>
 
   <div class="favs">
-    <h2>Escolha uma Ferrari que combine com você</h2>
+    <h2>Leilões futuros</h2>
     <select name="" id="sel_ferrari" style="width: 200px;" onchange="show()">
-      <option value="">Escolha uma</option>
+      <option value="">Escolha um</option>
       <option value="f40">F40</option>
       <option value="laferrari">LaFerrari</option>
       <option value="458">458 italia</option>
@@ -261,7 +261,7 @@
       </div>
       <div class="imagemb">
         <img src="" id="sel_img3" alt="" width="75%"> <br>
-        <button onclick="registrar()">Definir como favorita</button>
+        <button onclick="favoritar()">Participar deste Leilão</button>
       </div>
 </body>
 
@@ -275,7 +275,7 @@
     if (ferrari == 'f40') {
       sel_img1.src = "./CSS/assets/f40.jpg"
       sel_img2.src = "./CSS/assets/f406.jpg"
-      sel_img3.src = "./CSS/assets/f40red.jpg"
+      sel_img3.src = "./CSS/assets/f405.webp"
     } else if (ferrari == 'laferrari') {
       sel_img1.src = "./CSS/assets/laferrari7.jpg"
       sel_img2.src = "./CSS/assets/laferrari6.jpg"
@@ -292,6 +292,12 @@
       sel_img1.src = "./CSS/assets/enzo.jpg"
       sel_img2.src = "./CSS/assets/f12.jpg"
       sel_img3.src = "./CSS/assets/512bb.jpg"
+    } else if (ferrari == '') {
+      ferraris.style.display = 'none'
     }
+  }
+
+  function favoritar(){
+
   }
 </script>
