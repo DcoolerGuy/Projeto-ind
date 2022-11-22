@@ -2,22 +2,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Mukta&display=swap');
 
 
-*{
+* {
     font-family: 'Barlow', sans-serif;
 }
 
 
-body{
+body {
     margin: 0;
     padding: 0;
+    gap: 0;
 }
 
-.head{
+.head {
     position: fixed;
 }
 
-.logo{
-    position:relative;
+.logo {
+    position: relative;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,7 +26,7 @@ body{
     width: 320px;
 }
 
-.navbar{
+.navbar {
     background-color: transparent;
     display: flex;
     position: fixed;
@@ -39,15 +40,15 @@ body{
 }
 
 a {
-    position:relative;
+    position: relative;
     color: #ffffff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-ul{
-    position:relative;
+ul {
+    position: relative;
     width: 550px;
     background-color: transparent;
     display: flex;
@@ -59,16 +60,16 @@ ul{
 
 }
 
-.navbar a:hover{
+.navbar a:hover {
     color: red;
 
 }
 
-.navbar button{
+.navbar button {
 
     cursor: pointer;
     border-radius: 30px;
-    font-size:medium ;
+    font-size: medium;
     padding: 4px 10px;
     color: black;
     border: 2px solid red;
@@ -76,33 +77,33 @@ ul{
 
 
 
-.logo a{
+.logo a {
     font-size: 25px;
     font-style: italic;
     color: white;
-    
+
 }
 
-.logo a:hover{
+.logo a:hover {
     font-size: 25px;
     color: rgb(247, 0, 0);
 }
 
-.banner{
+.banner {
     padding: 2rem 0rem 1rem 0rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.banner video{
+.banner video {
     width: 100%;
     box-shadow: 0 1px 10px 75px rgba(0, 0, 0, 1);
     overflow: hidden;
 }
 
 
-.banner .content{
+.banner .content {
     position: absolute;
     z-index: 1;
     top: 8%;
@@ -110,23 +111,23 @@ ul{
     color: white;
 }
 
-.banner .content p{
+.banner .content p {
     font-size: 70px;
 }
 
 
 
-.txt1{
+.txt1 {
     border-radius: 20px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 0px;
-    
+
 }
 
-.txt1 p{
+.txt1 p {
     font-size: large;
 }
 
@@ -154,14 +155,14 @@ html {
     font-style: italic;
 }
 
-.ferrari{
+.ferrari {
     display: flex;
     justify-content: center;
     background-image: url(./assets/itastripcut.png);
 
-    }
+}
 
-.essere{
+.essere {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -176,68 +177,58 @@ html {
     box-shadow: 0 1px 15px 15px rgb(255, 255, 255);
 }
 
-.essere h1{
-    font-size:76px;
+.essere h1 {
+    font-size: 76px;
 
 }
 
-.essere p{
-    font-size: 25px;    
+.essere p {
+    font-size: 25px;
 }
 
-.scuderia{
+.scuderia {
     position: absolute;
     margin-left: 800px;
     margin-top: 400px;
 }
 
-.br{
-    padding: 5px;
+
+.ef img {
+    width: 100%;
+    height: 130%;
 }
 
-.ef img{
-width: 100%;
-height: 96%;
-}
-
-.eftxt{
-    height: 0px;
+.eftxt {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: absolute;
-    top: 2280px;
-    
+    top: 2380px;
+
 }
-    .eftxt h1{
-        font-size: 76px;
-        color: white;
-        text-shadow: rgb(108, 108, 108) 1px 2px 2px;
-    }
-
-    .eftxt p{
-        text-align: center;
-        font-size: 23px;
-        width: 90%;
-        color: white;
-        text-shadow: rgb(108, 108, 108) 1px 2px 2px;
-    }
 
 
-    .footer{ 
-        position: absolute;
-        width: 100%;
-        display: flex;
-        padding: 80px 0px 114px 0px;
-        justify-content: center;
-        background-image: url(./assets/carbon.jpg);
-        top: 3050px;
-    }
+.eftxt p {
+    text-align: left;
+    font-size: 23px;
+    width: 90%;
+    color: white;
+    text-shadow: rgb(47, 47, 47)3px 2px 19px;
+}
 
-    .footertxt{
-        margin-bottom: 10px;
-        color: white;
-        font-size: 20px;
-        font-style: italic;
-        border-bottom: 1px solid #ffffff;
-    }
+
+.footer {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    padding: 40px 0px 40px 0px;
+    justify-content: center;
+    background-image: url(./assets/carbon.jpg);
+    box-shadow: 0 1px 5px 9px rgb(19, 19, 19);
+}
+
+.footertxt {
+    color: white;
+    font-size: 20px;
+    font-style: italic;
+}

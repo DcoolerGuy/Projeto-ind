@@ -132,6 +132,12 @@ ul {
     width: 90%;
 }
 
+
+.hist h2 {
+    color: black;
+    border-bottom: 3px solid black;
+}
+
 .enzo {
     background-image: linear-gradient(to right, rgb(14, 14, 14), rgb(41, 16, 16));
     background-image: url(./assets/black-370118grad.png);
@@ -139,7 +145,7 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-radius: 10px 10px 10px 10px;
+
     width: 100%;
 }
 
@@ -151,26 +157,22 @@ ul {
 }
 
 .green {
-    border-radius: 10px;
     background-color: rgb(35, 197, 35);
     padding: 5px 0px 5px 0px;
-    box-shadow: 0 1px 15px 15px rgb(32, 32, 32);
+    box-shadow: 0 1px 15px 5px rgb(32, 32, 32);
 }
 
 .white {
-    border-radius: 10px;
     background-color: #dcd7d7;
     padding: 5px 0px 5px 0px;
 }
 
 .red {
-    border-radius: 10px;
     background-color: red;
     padding: 5px 0px 5px 0px;
 }
 
 .black {
-    border-radius: 10px 10px 10px 10px;
     background-color: rgb(21, 21, 21);
     padding: 1px 0px 1px 0px;
 }
@@ -248,7 +250,7 @@ ul {
 }
 
 .rivalries {
-    background-image: linear-gradient(to right, rgba(255,0,0,0), rgba(255,0,0,1));
+    background-image: linear-gradient(to right, rgba(255, 0, 0, 0), rgba(255, 0, 0, 1));
     background-image: url(./assets/black-370118grad.png);
     display: flex;
     flex-direction: column;
@@ -262,19 +264,19 @@ ul {
     margin-top: 40px;
 }
 
-.favs{
+.favs {
     /* background-image: url(./assets/black-370118grad.png); */
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.favs h2{
+.favs h2 {
     color: black;
     border-bottom: 3px solid black;
 }
 
-.imagens{
+.imagens {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -282,22 +284,22 @@ ul {
     margin-bottom: 30px;
 }
 
-.imagemb{
+.imagemb {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 10px;
 }
 
-.favs img{
+.favs img {
     border-radius: 10px;
-    box-shadow: 0 1px 15px 15px rgb(67, 67, 67);
-    border: 2px solid white;
+    box-shadow: 0 1px 15px 5px rgb(67, 67, 67);
+    border: 1px solid white;
 }
 
-select{
+select {
     border: 2px solid rgb(244, 20, 20);
-    color: rgb(0,0, 0);
+    color: rgb(0, 0, 0);
     border-radius: 5px;
     padding: 3px;
     font-style: bold;
@@ -307,7 +309,7 @@ select{
     font-size: 20px;
 }
 
-.favs button{
+.favs button {
     margin-top: 50px;
     text-align: center;
     color: #ffffff;
