@@ -9,7 +9,7 @@ h2 {
     font-size: 50px;
     font-style: italic;
     color: white;
-    border-bottom: 2px solid white;
+    
 }
 
 body {
@@ -273,7 +273,6 @@ ul {
 
 .favs h2 {
     color: black;
-    border-bottom: 3px solid black;
 }
 
 .imagens {
