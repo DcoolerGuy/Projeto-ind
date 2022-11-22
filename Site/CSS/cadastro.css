@@ -126,6 +126,7 @@ a {
 
 
 input{
+    text-align: center;
     border:2px solid rgb(255, 0, 0);
     color: black;
     border-radius: 13px;
