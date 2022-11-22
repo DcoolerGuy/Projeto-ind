@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Mukta&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Mukta&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
 
 * {
@@ -231,4 +231,5 @@ html {
     color: white;
     font-size: 20px;
     font-style: italic;
+    font-family: 'Body-Font';
 }

@@ -1,7 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Mukta&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
 * {
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Kanit', sans-serif;
 
 }
 
@@ -9,7 +11,7 @@ h2 {
     font-size: 50px;
     font-style: italic;
     color: white;
-    
+    font-family: 'Bitter';
 }
 
 body {
@@ -53,6 +55,7 @@ html {
     width: 100%;
     border-radius: 0px 0px 10px 10px;
     z-index: 100000;
+    font-family: 'Barlow';
 
 }
 
@@ -62,6 +65,7 @@ a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-family: 'Bitter';
 }
 
 ul {
@@ -135,7 +139,6 @@ ul {
 
 .hist h2 {
     color: black;
-    border-bottom: 3px solid black;
 }
 
 .enzo {
