@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/login.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="back">
+            <ul>
+                <img src="./CSS/assets/logo.png" alt="" width="190px">
+                <p><b>Eserre Ferrari</b></p>
+            </ul>
+        </div>
+        <div class="green">
+            <div class="white">
+                <div class="red">
+                    <div class="caixa_form">
+                        <div class="navbar"><a href="index.html">
+                                <img src="./CSS/assets/ferrariwhite.png" alt="" width="140px"></a>
+                        </div>
+                        <div class="pos">
+                            <h1>Login</h1>
+                            Usuario <br>
+                            <input type="text" placeholder="seuemail@dominio.com" id="in_email"> <br>
+                            Senha <br>
+                            <input type="password" placeholder="**********" id="in_senha"> <br> <br>
+                            <button onclick="entrar()"><b>Entrar</b></button>
+                            <div class="msg" id="msg" style="display: none;"></div>
+                            <div id="div_aguardar" class="loading-div" style="display: none;">
+                                <img src="./assets/circle-loading.gif" id="loading-gif">
+                            </div>
+                            <div id="div_erros_login">
+
+                            </div>
+                            <p>Não tem uma conta?<a href="cadastro.html"> Clique aqui</a></span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+
+
+    function entrar() {
+        aguardar();
+
+        var email = in_email.value;
+        var senha = in_senha.value;
+
+        if (email == "" || senha == "") {
+            msg.style.display = "block"
+            msg.innerHTML = "Senha e/ou usuário inválidos";
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idususario;
+
+                    setTimeout(function () {
+                        window.location = "content.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        msg.style.display = "none"
+    }
+
+</script>

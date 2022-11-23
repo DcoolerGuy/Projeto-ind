@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/cadastro.css">
+    <script src="./js/funcoes.js"></script>
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="back">
+            <ul>
+                <img src="./CSS/assets/logo.png" alt="" width="190px">
+                <p><b>Eserre Ferrari</b></p>
+            </ul>
+        </div>
+        <div class="green">
+            <div class="white">
+                <div class="red">
+                    <div class="caixa_form">
+                        <div class="navbar"><a href="index.html">
+                                <img src="./CSS/assets/ferrariwhite.png" alt="" width="140px"></a>
+                        </div>
+                        <div class="pos">
+                            <h1>Cadastre-se</h1>
+
+                            <input type="text" placeholder="Seu nome aqui" id="in_nome"> <br>
+                            <input type="email" placeholder="seuemail@dominio.com" id="in_email"> <br>
+                            <input type="password" placeholder="Senha" id="in_senha"> <br>
+                            <input type="password" placeholder="Confirmação de Senha" id="in_confsenha"> <br>
+
+                            <button onclick="cadastrar()"><b>Cadastrar</b></button>
+                            <div class="msg" id="msg" style="display: none;"></div>
+                            <div id="div_aguardar" class="loading-div">
+                                <img src="./assets/circle-loading.gif" id="loading-gif">
+                            </div>
+                            <div id="div_erros_login">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+
+</html>
+
+<script>
+    function cadastrar() {
+        aguardar();
+
+        //Recupere o valor da nova input pelo nome do id
+        // Agora vá para o método fetch logo abaixo
+        var nome = in_nome.value;
+        var email = in_email.value;
+        var senha = in_senha.value;
+        var confsenha = in_confsenha.value;
+
+        if (nome == "" || email == "" || senha == "" || confsenha == "") {
+            msg.style.display = "block"
+            msg.innerHTML = "Campos vazios ou inválidos";
+
+            finalizarAguardar();
+            return false;
+        }
+        else {
+            setInterval(sumirMensagem, 5000)
+        }
+
+        // Enviando o valor da nova input
+        fetch("/usuarios/cadastrar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                // crie um atributo que recebe o valor recuperado aqui
+                // Agora vá para o arquivo routes/usuario.js
+                nomeServer: nome,
+                emailServer: email,
+                senhaServer: senha
+            })
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                msg.style.display = "block";
+
+                msg.innerHTML = "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+                setTimeout(() => {
+                    window.location = "login.html";
+                }, "2000")
+                
+                limparFormulario();
+                finalizarAguardar();
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+    }
+
+    function sumirMensagem() {
+        msg.style.display = "none"
+    }
+
+</script>
