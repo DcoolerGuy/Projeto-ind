@@ -27,16 +27,15 @@ body {
 }
 
 .navbar {
-    background-color: transparent;
+    /* background-color: transparent; */
+    background-color: rgb(0,0,0,0.5);
     display: flex;
     position: fixed;
     justify-content: space-between;
-    background-color: transparent;
     padding: 5px;
     width: 100%;
     border-radius: 0px 0px 10px 10px;
     z-index: 100000;
-
 }
 
 a {
@@ -106,7 +105,7 @@ ul {
 .banner .content {
     position: absolute;
     z-index: 1;
-    top: 8%;
+    top: 35px;
     left: 3%;
     color: white;
 }

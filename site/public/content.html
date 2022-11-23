@@ -115,7 +115,7 @@
             </div>
           </div>
 
-            <!-- mural rua -->
+          <!-- mural rua -->
           <div class="lendasrua">
             <h2>As lendas das ruas</h2>
             <div class="carousel3">
@@ -186,7 +186,7 @@
             <h2>O último ato de Enzo: a F40</h2>
 
             <div class="carousel4">
-            <!-- Parametriza o carousel de acordo com a qtd de imagens -->
+              <!-- Parametriza o carousel de acordo com a qtd de imagens -->
               <div class="gallery autoplay items-4">
                 <div id="item-1" class="control-operator"></div>
                 <div id="item-2" class="control-operator"></div>
@@ -255,7 +255,7 @@
 
   <!-- Leilão -->
   <div class="favs">
-    <h2>Leilões futuros</h2>
+    <h2>Conheca um pouco mais</h2>
     <select name="" id="sel_ferrari" style="width: 200px;" onchange="show()">
       <option value="">Escolha um</option>
       <option value="f40">F40</option>
@@ -282,8 +282,8 @@
         <img src="" id="sel_img3" alt="" width="100%">
         <h2 id="h_3" style="color:white;"></h2>
         <p id="p_3"></p>
+        <button onclick="direct()">Definir como favorita</button>
       </div>
-      <button onclick="favoritar()">Participar deste Leilão</button>
     </div>
 </body>
 
@@ -296,58 +296,97 @@
 
     if (ferrari == 'f40') {
       sel_img1.src = "./CSS/assets/f40.jpg"
-      h_1.innerHTML = ``
-      p_1.innerHTML = ``
+      h_1.innerHTML = `Performance`
+      p_1.innerHTML = `
+      Motorização	: 2.9L<br>
+      Potência (cv)	: 478<br>
+      Torque (kgf.m) :	58,8<br>
+      Velocidade Máxima (km/h) : 324<br>
+      Tempo 0-100 (s)	: 4,3<br>`
       sel_img2.src = "./CSS/assets/f405.webp"
-      h_2.innerHTML = ``
-      p_2.innerHTML = ``
+      h_2.innerHTML = `Chassi`
+      p_2.innerHTML = `
+      Altura (mm) : 1.130 <br>
+      Largura (mm):	1.980<br>
+      Comprimento (mm) : 4.430<br>
+      Peso (Kg)	: 1.110<br>`
       sel_img3.src = "./CSS/assets/f406.jpg"
-      h_3.innerHTML = ``
-      p_3.innerHTML = ``
+      h_3.innerHTML = `Detalhes`
+      p_3.innerHTML = `
+      Valor sugerido: R$:12.000.000,00
+      Produção: 1987-1992<br>
+      A ultima obra prima de Enzo Ferrari, ele tinha o desejo de marcar o seu legado com uma ultima maquina. A F40 veio ao mundo com o intuito de ser rápida e nem um pouco confortavel.`
     } else if (ferrari == 'laferrari') {
       sel_img1.src = "./CSS/assets/laferrari7.jpg"
-      h_1.innerHTML = ``
+      h_1.innerHTML = `Performance`
       p_1.innerHTML = ``
       sel_img2.src = "./CSS/assets/laferrari6.jpg"
-      h_2.innerHTML = ``
+      h_2.innerHTML = `Chassi`
       p_2.innerHTML = ``
       sel_img3.src = "./CSS/assets/laferrari5.jpg"
-      h_3.innerHTML = ``
+      h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
     } else if (ferrari == '458') {
       sel_img1.src = "./CSS/assets/458it3.jpg"
-      h_1.innerHTML = ``
-      p_1.innerHTML = ``
+      h_1.innerHTML = `Performance`
+      p_1.innerHTML = `
+      Motorização	: 4.5L<br>
+      Potência (cv)	: 570<br>
+      Torque (kgf.m) :	55,06<br>
+      Velocidade Máxima (km/h) : 325<br>
+      Tempo 0-100 (s)	: 3,4<br>
+      Consumo cidade (km/l)	: 5,1<br>
+      Consumo estrada (km/l) : 10,3<br>`
       sel_img2.src = "./CSS/assets/458it4.jpg"
-      h_2.innerHTML = ``
-      p_2.innerHTML = ``
+      h_2.innerHTML = `Chassi`
+      p_2.innerHTML = `
+      Altura (mm) : 1.213 <br>
+      Largura (mm):	1.937<br>
+      Comprimento (mm) : 4.527<br>
+      Peso (Kg)	: 1.380<br>`
       sel_img3.src = "./CSS/assets/458gt32.jpg"
-      h_3.innerHTML = ``
-      p_3.innerHTML = ``
+      h_3.innerHTML = `Detalhes`
+      p_3.innerHTML = `Valor sugerido : R$ 1.623.500,00<br> Produção: 2009-2014
+      Substituta da F430, a Ferrari 458 Italia, apresentada pela primeira vez no Salão de Frankfurt (Alemanha) 2009, desembarcou no Brasil em 2010. O Brasil, inclusive, foi o primeiro país da América Latina  a receber o superesportivo da montadora italiana.`
+
     } else if (ferrari == '250') {
       sel_img1.src = "./CSS/assets/250gto2.jpg"
-      h_1.innerHTML = ``
+      h_1.innerHTML = `Performance`
       p_1.innerHTML = ``
       sel_img2.src = "./CSS/assets/250gto3.jpg"
-      h_2.innerHTML = ``
+      h_2.innerHTML = `Chassi`
       p_2.innerHTML = ``
       sel_img3.src = "./CSS/assets/250gto4.jpg"
-      h_3.innerHTML = ``
+      h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
     } else if (ferrari == 'enzo') {
       sel_img1.src = "./CSS/assets/enzo.jpg"
+      h_1.innerHTML = `Performance`
+      p_1.innerHTML = ``
       sel_img2.src = "./CSS/assets/f12.jpg"
-      h_2.innerHTML = ``
+      h_2.innerHTML = `Chassi`
       p_2.innerHTML = ``
       sel_img3.src = "./CSS/assets/512bb.jpg"
-      h_3.innerHTML = ``
+      h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
     } else if (ferrari == '') {
       ferraris.style.display = 'none'
     }
   }
 
-  function favoritar() {
+  function direct() {
+    var ferrari = sel_ferrari.value
 
+    if (ferrari == '458') {
+      window.location = 'https://www.auctionexport.com/en/Inventory/Info/2012-ferrari-458-italia-188044025?searchID=432333446#.Y35K_erMLIV'
+    } else if (ferrari == 'f40') {
+      window.location = ''
+    } else if (ferrari == '250') {
+      window.location = ''
+    } else if (ferrari == 'enzo') {
+      window.location = ''
+    } else if (ferrari == 'laferrari') {
+      window.location = ''
+    }
   }
 </script>

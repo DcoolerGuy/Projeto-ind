@@ -27,3 +27,11 @@ fkferrari int,
 foreign key (fkferrari) references ferrari(idferrari),
 valorInicial decimal(10,2)
 );
+
+insert into ferrari values
+(null,'458 italia','Rosso Corsa',2015),
+(null,'458 italia','Rosso Corsa',2015),
+(null,'458 italia','Rosso Corsa',2015),
+(null,'458 italia','Rosso Corsa',2015),
+(null,'458 italia','Rosso Corsa',2015),
+(null,'458 italia','Rosso Corsa',2015),
