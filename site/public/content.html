@@ -21,13 +21,12 @@
     </div>
 
     <ul>
-      <li><a href="#esseref">O que é essere ferrari?</a></li>
+      <li><a href="leilao.html">Leilões</a></li>
       <p style="cursor:default;color: rgb(0, 255, 0);">|</p>
-      <li><a href="#ef">Projeto EF</a></li>
+      <li><a href="#favs">Conheca os modelos</a></li>
       <p style="cursor:default;color: rgb(255, 255, 255);;">|</p>
       <li class="logcad"><a href="login.html">Log-out</a></li>
       <p style="cursor:default;color: red;">|</p>
-      <!-- <li class="logcad"><a href="cadastro.html">Cadastre-se</a></li> -->
 
     </ul>
   </div>
@@ -62,11 +61,11 @@
                   <div id="item-2" class="control-operator"></div>
 
                   <figure class="item">
-                    <h1><img src="./CSS/assets/125.webp" alt="" width="100%"></h1>
+                    <h1><img src="./CSS/assets/125.webp" alt="" width="100%">f125</h1>
                   </figure>
 
                   <figure class="item">
-                    <h1><img src="./CSS/assets/125f1.jfif" alt="" width="100%"></h1>
+                    <h1><img src="./CSS/assets/125f1.jfif" alt="" width="100%">f125</h1>
                   </figure>
                 </div>
                 <div class="gallery autoplay items-2">
@@ -74,11 +73,11 @@
                   <div id="item-2" class="control-operator"></div>
 
                   <figure class="item">
-                    <h1><img src="./CSS/assets/1947-ferrari-125-s_100595863.jpg" alt="" width="100%"></h1>
+                    <h1><img src="./CSS/assets/1947-ferrari-125-s_100595863.jpg" alt="" width="100%">125s</h1>
                   </figure>
 
                   <figure class="item">
-                    <h1><img src="./CSS/assets/125sdash.jpg" alt="" width="100%"></h1>
+                    <h1><img src="./CSS/assets/125sdash.jpg" alt="" width="100%">Dashboard 125s</h1>
                   </figure>
                 </div>
               </div>
@@ -254,7 +253,7 @@
 
 
   <!-- Leilão -->
-  <div class="favs">
+  <div class="favs" id="favs">
     <h2>Conheca um pouco mais</h2>
     <select name="" id="sel_ferrari" style="width: 200px;" onchange="show()">
       <option value="">Escolha um</option>
@@ -282,10 +281,16 @@
         <img src="" id="sel_img3" alt="" width="100%">
         <h2 id="h_3" style="color:white;"></h2>
         <p id="p_3"></p>
-        <button onclick="direct()">Definir como favorita</button>
       </div>
     </div>
 </body>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footertxt">
+          <p><b>Feito pelo melhor SPtecher e que sonha em ter uma ferrari um dia</b></p>
+      </div>
+  </div>
 
 </html>
 
@@ -313,7 +318,7 @@
       sel_img3.src = "./CSS/assets/f406.jpg"
       h_3.innerHTML = `Detalhes`
       p_3.innerHTML = `
-      Valor sugerido: R$:12.000.000,00
+      Valor sugerido: R$:12.000.000,00<br>
       Produção: 1987-1992<br>
       A ultima obra prima de Enzo Ferrari, ele tinha o desejo de marcar o seu legado com uma ultima maquina. A F40 veio ao mundo com o intuito de ser rápida e nem um pouco confortavel.`
     } else if (ferrari == 'laferrari') {
@@ -371,22 +376,6 @@
       p_3.innerHTML = ``
     } else if (ferrari == '') {
       ferraris.style.display = 'none'
-    }
-  }
-
-  function direct() {
-    var ferrari = sel_ferrari.value
-
-    if (ferrari == '458') {
-      window.location = 'https://www.auctionexport.com/en/Inventory/Info/2012-ferrari-458-italia-188044025?searchID=432333446#.Y35K_erMLIV'
-    } else if (ferrari == 'f40') {
-      window.location = ''
-    } else if (ferrari == '250') {
-      window.location = ''
-    } else if (ferrari == 'enzo') {
-      window.location = ''
-    } else if (ferrari == 'laferrari') {
-      window.location = ''
     }
   }
 </script>

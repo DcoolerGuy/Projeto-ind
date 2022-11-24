@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
+
+p{
+    font-family: 'Kanit',sans-serif;
+}
+
+h1 h2{    
+    font-size: 50px;
+    font-style: italic;
+    color: white;
+    font-family: 'Bitter';
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    background-image: url(./assets/carbon.jpg);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #ffffff;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ff0000;
+}
+
+.logo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 320px;
+}
+
+.navbar {
+    background-color: rgba(23, 23, 23, 0.5);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0px 5px 0px;
+    width: 100%;
+    border-radius: 0px 0px 10px 10px;
+}
+
+a {
+    color: #fefefe;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-family: 'Kanit',sans-serif;
+}
+
+ul {
+    width: 500px;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    list-style: none;
+    margin-right: 10px;
+
+}
+
+.navbar a:hover {
+    color: red;
+}
+
+.navbar button {
+
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: medium;
+    padding: 4px 10px;
+    color: black;
+    border: 2px solid red;
+}
+
+
+
+.logo a {
+    font-size: 25px;
+    font-style: italic;
+    color: white;
+
+}
+
+.logo a:hover {
+    font-size: 25px;
+    font-style: italic;
+    color: rgb(247, 0, 0);
+}
+
+
+.gallery h2{
+    font-size: 30px;
+    color: rgb(11, 9, 9);
+    background-color: transparent;
+    font-family: 'Kanit',sans-serif;
+}
+
+.gallery img{
+    border-radius: 10px;
+    border: 1px solid rgb(36, 35, 35);
+    box-shadow: 0 1px 15px 5px rgb(30, 29, 29);
+}
+
+.leilao{
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(137, 136, 136));
+    border: 1px solid rgb(4, 4, 4);
+    padding: 0px 0px 2px 0px;
+    border-radius: 10px;
+    box-shadow: 0 1px 15px 5px rgb(156, 155, 155);
+}
+
+.leilao p{
+    font-size: 20px;
+    margin-left: 10%;
+    text-align: center;
+    width: 80%;
+}
