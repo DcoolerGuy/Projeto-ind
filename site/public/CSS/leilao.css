@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
-p{
-    font-family: 'Kanit',sans-serif;
+p {
+    font-family: 'Kanit', sans-serif;
 }
 
-h1 h2{    
+h1 h2 {
     font-size: 50px;
     font-style: italic;
     color: white;
     font-family: 'Bitter';
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,7 @@ a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: 'Kanit',sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
 ul {
@@ -103,77 +103,80 @@ ul {
 }
 
 
-.gallery h2{
+.gallery h2 {
     font-size: 30px;
     color: rgb(11, 9, 9);
     background-color: transparent;
-    font-family: 'Kanit',sans-serif;
+    font-family: 'Kanit', sans-serif;
 }
 
-.gallery img{
+.gallery img {
     border-radius: 10px;
-    border: 2px solid rgb(36, 35, 35);
     box-shadow: 0 1px 15px 5px rgb(30, 29, 29);
 }
 
-.leilao{
+.leilao {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
     width: 90%;
-    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(214, 210, 210));
-    border: 2px solid rgb(4, 4, 4);
+    background: rgb(145, 145, 145);
+    background: linear-gradient(141deg, rgba(145, 145, 145, 1) 20%, rgba(255, 255, 255, 1) 100%);
     padding: 0px 0px 2px 0px;
     border-radius: 10px;
     box-shadow: 0 1px 15px 5px rgb(156, 155, 155);
 }
 
-.leilao p{
+.leilao p {
     font-size: 25px;
     margin-left: 10%;
     text-align: center;
     width: 80%;
 }
 
-.leilao input{
+.leilao input {
     margin-left: 40%;
     margin-bottom: 15px;
     padding: 10px 0px 10px 0px;
-    background-color: rgb(170, 169, 169);
-    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    color: rgb(238, 238, 238);
     font-size: 20px;
     text-align: center;
-    border: 2px solid rgb(10, 10, 10);
+    border: 2px solid rgb(255, 0, 0);
     border-radius: 10px;
     transition: 0.3s;
 }
 
-.leilao input:hover{
+.leilao input:hover {
     border: 2px solid rgb(190, 31, 31);
+    background-color: #131212;
+    color: #ffffff;
 }
 
-.leilao button{
+.leilao button {
     margin-left: 46%;
     margin-bottom: 15px;
     padding: 9px 15px 9px 15px;
-    background-image: url(./assets/carbon.jpg);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(5, 5, 5);
     font-size: 20px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid rgb(14, 14, 14);
     border-radius: 10px;
     transition: 0.7s;
     font-style: bold;
-    
+
 }
 
-.leilao button:hover{
+.leilao button:hover {
     cursor: pointer;
     border: 2px solid red;
-    
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+
 }
 
-.desc{
+.desc {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -198,7 +201,7 @@ ul {
     font-style: italic;
 }
 
-.footertxt b{
+.footertxt b {
     border-bottom: 3px solid black;
     border-radius: 5px;
 }
