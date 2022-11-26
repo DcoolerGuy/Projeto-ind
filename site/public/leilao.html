@@ -36,26 +36,42 @@
             <div id="item-3" class="control-operator"></div>
 
             <figure class="item">
-                <img src="./CSS/assets/f40.jpg" alt="" width="100%"><h2>MODELO</h2>
+                <img src="./CSS/assets/f40.jpg" alt="" width="100%">
+                <h2>Modelo: F40</h2>
             </figure>
 
             <figure class="item">
-                <img src="./CSS/assets/f402.jpg" alt="" width="100%"><h2>COR</h2>
+                <img src="./CSS/assets/f402.jpg" alt="" width="100%">
+                <h2>Cor: Rosso Corsa</h2>
             </figure>
 
             <figure class="item">
-                <img src="./CSS/assets/f404.jpg" alt="" width="100%"><h2>ANO</h2>
+                <img src="./CSS/assets/f404.jpg" alt="" width="100%">
+                <h2>Ano: 1991</h2>
             </figure>
-
-            <p>Valor inicial: R$Valor<br>
-                Kilometragem: 7.076<br>
-                Peças originais<br>
-                Ótimo estado<br>
-                Certifiado <i>Classiche</i>
-            </p>
-            <p>Ultimo Lance: lancefinal</p>
-            <input id="in_lance" placeholder="Faça o seu lance"> <br>
-            <button onclick="validar()">Validar</button>
+            <div class="desc">
+                <p>
+                    Valor inicial: R$Valor<br>
+                    Kilometragem: 7.076
+                </p>
+                <p>
+                    Peças originais<br>
+                    Ótimo estado
+                </p>
+            </div>
+            <div class="desc">
+                <p>
+                    Certifiado <i>Classiche</i>
+                </p>
+            </div>
+            <p>Ultimo Lance: <b id="lance1">lancefinal</b></p>
+            <form id="form_postagem" method="post" onsubmit="return publicar()">
+                <label>
+                    <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
+                </label>
+                <br>
+                <button>Enviar</button>
+            </form>
         </div>
     </div>
 
@@ -66,35 +82,158 @@
             <div id="item-3" class="control-operator"></div>
 
             <figure class="item">
-                <img src="./CSS/assets/laferrari2.webp" alt="" width="100%"><h2>MODELO</h2>
+                <img src="./CSS/assets/laferrari2.webp" alt="" width="100%">
+                <h2>Modelo: LaFerrari</h2>
             </figure>
 
             <figure class="item">
-                <img src="./CSS/assets/laferrari.jpg" alt="" width="100%"><h2>COR</h2>
+                <img src="./CSS/assets/laferrari.jpg" alt="" width="100%">
+                <h2>Cor: Rosso Corsa</h2>
             </figure>
 
             <figure class="item">
-                <img src="./CSS/assets/laferrari4.jpg" alt="" width="100%"><h2>ANO</h2>
+                <img src="./CSS/assets/laferrari4.jpg" alt="" width="100%">
+                <h2>Ano: 2014</h2>
             </figure>
 
             <p>Valor inicial: R$Valor<br>
                 Kilometragem: 16.406<br>
-                Peças Modificadas: Rodas 19" BBS Dourada<br>
+                Peças Modificadas: Rodas 19" Rays 57FXX<br>
                 Ótimo estado<br>
-                
+
             </p>
-            <p>Ultimo Lance: lancefinal</p>
-            <input id="in_lance" placeholder="Faça o seu lance"> <br>
-            <button onclick="validar()">Validar</button>
+            <p>Ultimo Lance: <b id="lance1">lancefinal</b></p>
+            <form id="form_postagem" method="post" onsubmit="return publicar()">
+                <label>
+                    <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
+                </label>
+                <br>
+                <button>Enviar</button>
+            </form>
         </div>
     </div>
 
-        <!-- FOOTER -->
-        <div class="footer">
-            <div class="footertxt">
-                <p><b>Feito pelo melhor SPtecher e que sonha em ter uma ferrari um dia</b></p>
-            </div>
+    <!-- FOOTER -->
+    <div class="footer">
+        <div class="footertxt">
+            <p><b>Feito pelo melhor SPtecher e que sonha em ter uma ferrari um dia</b></p>
         </div>
+    </div>
 </body>
 
 </html>
+
+<script>
+
+
+
+    function limparFormulario() {
+        document.getElementById("form_postagem").reset();
+    }
+
+    function publicar() {
+        var idUsuario = sessionStorage.ID_USUARIO;
+
+        var corpo = {
+            leilao: form_postagem.in_lance.value,
+        }
+
+        fetch(`/avisos/publicar/${idUsuario}`, {
+            method: "post",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(corpo)
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "leilao.html";
+                limparFormulario();
+                finalizarAguardar();
+            } else if (resposta.status == 404) {
+                window.alert("Deu 404!");
+            } else {
+                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            finalizarAguardar();
+        });
+
+        return false;
+
+    }
+
+    function atualizarFeed() {
+        //aguardar();
+        fetch("/avisos/listar").then(function (resposta) {
+            if (resposta.ok) {
+                if (resposta.status == 204) {
+                    var feed = document.getElementById("feed_container");
+                    var mensagem = document.createElement("span");
+                    mensagem.innerHTML = "Nenhum resultado encontrado."
+                    feed.appendChild(mensagem);
+                    throw "Nenhum resultado encontrado!!";
+                }
+
+                resposta.json().then(function (resposta) {
+                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+
+                    var feed = document.getElementById("feed_container");
+                    feed.innerHTML = "";
+                    for (let i = 0; i < resposta.length; i++) {
+                        var publicacao = resposta[i];
+
+                        // criando e manipulando elementos do HTML via JavaScript
+                        var divPublicacao = document.createElement("div");
+                        var spanID = document.createElement("span");
+                        var spanTitulo = document.createElement("span");
+                        var spanNome = document.createElement("span");
+
+
+                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
+                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
+
+                        divPublicacao.className = "publicacao";
+                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanNome.className = "publicacao-nome";
+                        spanTitulo.className = "publicacao-titulo";
+
+                        divPublicacao.appendChild(spanID);
+                        divPublicacao.appendChild(spanNome);
+                        divPublicacao.appendChild(spanTitulo);
+                        divPublicacao.appendChild(divDescricao);
+                        feed.appendChild(divPublicacao);
+                    }
+
+                    finalizarAguardar();
+                });
+            } else {
+                throw ('Houve um erro na API!');
+            }
+        }).catch(function (resposta) {
+            console.error(resposta);
+            finalizarAguardar();
+        });
+    }
+
+    function testar() {
+        aguardar();
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_postagem")));
+
+        var divResultado = document.getElementById("div_feed");
+
+        divResultado.appendChild(document.createTextNode(formulario.get("descricao")));
+        divResultado.innerHTML = formulario.get("descricao");
+
+        finalizarAguardar();
+
+        return false;
+    }
+
+</script>

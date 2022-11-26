@@ -112,7 +112,7 @@ ul {
 
 .gallery img{
     border-radius: 10px;
-    border: 1px solid rgb(36, 35, 35);
+    border: 2px solid rgb(36, 35, 35);
     box-shadow: 0 1px 15px 5px rgb(30, 29, 29);
 }
 
@@ -121,15 +121,15 @@ ul {
     display: flex;
     flex-direction: column;
     width: 90%;
-    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(192, 192, 192));
-    border: 1px solid rgb(4, 4, 4);
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(214, 210, 210));
+    border: 2px solid rgb(4, 4, 4);
     padding: 0px 0px 2px 0px;
     border-radius: 10px;
     box-shadow: 0 1px 15px 5px rgb(156, 155, 155);
 }
 
 .leilao p{
-    font-size: 20px;
+    font-size: 25px;
     margin-left: 10%;
     text-align: center;
     width: 80%;
@@ -139,13 +139,13 @@ ul {
     margin-left: 40%;
     margin-bottom: 15px;
     padding: 10px 0px 10px 0px;
-    background-image: url(./assets/carbon.jpg);
-    color: white;
+    background-color: rgb(170, 169, 169);
+    color: rgb(0, 0, 0);
     font-size: 20px;
     text-align: center;
-    border: 2px solid white;
+    border: 2px solid rgb(10, 10, 10);
     border-radius: 10px;
-    transition: 0.7s;
+    transition: 0.3s;
 }
 
 .leilao input:hover{
@@ -171,6 +171,13 @@ ul {
     cursor: pointer;
     border: 2px solid red;
     
+}
+
+.desc{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-right: 10%;
 }
 
 .footer {
