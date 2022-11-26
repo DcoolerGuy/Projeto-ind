@@ -103,7 +103,7 @@ ul {
 }
 
 
-.gallery h2 {
+.gallery h3 {
     font-size: 30px;
     color: rgb(11, 9, 9);
     background-color: transparent;
@@ -115,13 +115,17 @@ ul {
     box-shadow: 0 1px 15px 5px rgb(30, 29, 29);
 }
 
+h3,p{
+    text-shadow: rgb(80, 79, 79)1px 2px 11px;
+}
+
 .leilao {
-    margin-top: 100px;
+    margin-top: 50px;
     display: flex;
     flex-direction: column;
-    width: 90%;
+    width: 85%;
     background: rgb(145, 145, 145);
-    background: linear-gradient(141deg, rgba(145, 145, 145, 1) 20%, rgba(255, 255, 255, 1) 100%);
+    background: linear-gradient(141deg, rgb(129, 128, 128) 20%, rgba(255, 255, 255, 1) 100%);
     padding: 0px 0px 2px 0px;
     border-radius: 10px;
     box-shadow: 0 1px 15px 5px rgb(156, 155, 155);
@@ -176,15 +180,11 @@ ul {
 
 }
 
-.desc {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    margin-right: 10%;
-}
+
 
 .footer {
     margin-top: 20px;
+    background-image: url(./assets/whiteback.webp);
     width: 100%;
     display: flex;
     justify-content: center;
