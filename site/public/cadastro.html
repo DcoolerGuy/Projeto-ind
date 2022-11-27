@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./CSS/cadastro.css">
+    <link rel="shortcut icon" href="./CSS/assets/ferrariwhite.png">
     <script src="./js/funcoes.js"></script>
     <title>Login</title>
 </head>
@@ -36,7 +37,7 @@
                             <button onclick="cadastrar()"><b>Cadastrar</b></button>
                             <div class="msg" id="msg" style="display: none;"></div>
                             <div id="div_aguardar" class="loading-div">
-                                <img src="./assets/circle-loading.gif" id="loading-gif">
+                                <img src="./CSS/assets/loading.mp4" id="loading-gif">
                             </div>
                             <div id="div_erros_login">
 
@@ -62,6 +63,7 @@
         var confsenha = in_confsenha.value;
 
         if (nome == "" || email == "" || senha == "" || confsenha == "") {
+            
             msg.style.display = "block"
             msg.innerHTML = "Campos vazios ou inválidos";
 
@@ -69,7 +71,12 @@
             return false;
         }
         else {
+            if(senha==confsenha){
             setInterval(sumirMensagem, 5000)
+            } else{
+                msg.innerHTML = "Senhas não combinam"
+            }
+
         }
 
         // Enviando o valor da nova input

@@ -33,7 +33,7 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #ff0000;
+    background-color: rgb(201, 9, 9);
 }
 
 .logo {
