@@ -283,23 +283,53 @@
         <p id="p_3"></p>
       </div>
     </div>
+
+    <div class="mural">
+      <h2>Quer descobrir sua futura garagem?</h2>
+      <button onclick="montar()">Montar</button>
+      <div id="fotos" class="fotos" style="display: none;">
+
+        <div class="gallery autoplay items-3">
+
+          <div id="item-1" class="control-operator"></div>
+          <div id="item-2" class="control-operator"></div>
+          <div id="item-3" class="control-operator"></div>
+
+          <figure class="item">
+            <img src="" id="img_m1" alt="">
+          </figure>
+
+          <figure class="item">
+            <img src="" id="img_m2" alt="">
+          </figure>
+
+          <figure class="item">
+            <img src="" id="img_m3" alt="">
+          </figure>
+          
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
-    <!-- FOOTER -->
-    <div class="footer">
-      <div class="footertxt">
-          <p><b>Feito pelo melhor SPtecher e que sonha em ter uma ferrari um dia</b></p>
-      </div>
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footertxt">
+    <p><b>Feito pelo melhor SPtecher e que sonha em ter uma ferrari um dia</b></p>
   </div>
+</div>
 
 </html>
 
 <script>
+
   function show() {
     var ferrari = sel_ferrari.value
     ferraris.style.display = 'block'
 
     if (ferrari == 'f40') {
+
       sel_img1.src = "./CSS/assets/f40.jpg"
       h_1.innerHTML = `Performance`
       p_1.innerHTML = `
@@ -321,7 +351,9 @@
       Valor sugerido: R$:12.000.000,00<br>
       Produção: 1987-1992<br>
       A ultima obra prima de Enzo Ferrari, ele tinha o desejo de marcar o seu legado com uma ultima maquina. A F40 veio ao mundo com o intuito de ser rápida e nem um pouco confortavel.`
+
     } else if (ferrari == 'laferrari') {
+
       sel_img1.src = "./CSS/assets/laferrari7.jpg"
       h_1.innerHTML = `Performance`
       p_1.innerHTML = ``
@@ -331,7 +363,9 @@
       sel_img3.src = "./CSS/assets/laferrari5.jpg"
       h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
+
     } else if (ferrari == '458') {
+
       sel_img1.src = "./CSS/assets/458it3.jpg"
       h_1.innerHTML = `Performance`
       p_1.innerHTML = `
@@ -355,6 +389,7 @@
       Substituta da F430, a Ferrari 458 Italia, apresentada pela primeira vez no Salão de Frankfurt (Alemanha) 2009, desembarcou no Brasil em 2010. O Brasil, inclusive, foi o primeiro país da América Latina  a receber o superesportivo da montadora italiana.`
 
     } else if (ferrari == '250') {
+
       sel_img1.src = "./CSS/assets/250gto2.jpg"
       h_1.innerHTML = `Performance`
       p_1.innerHTML = ``
@@ -364,18 +399,83 @@
       sel_img3.src = "./CSS/assets/250gto4.jpg"
       h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
+
     } else if (ferrari == 'enzo') {
+
       sel_img1.src = "./CSS/assets/enzo.jpg"
       h_1.innerHTML = `Performance`
       p_1.innerHTML = ``
-      sel_img2.src = "./CSS/assets/f12.jpg"
+      sel_img2.src = "./CSS/assets/enzo2.jpg"
       h_2.innerHTML = `Chassi`
       p_2.innerHTML = ``
-      sel_img3.src = "./CSS/assets/512bb.jpg"
+      sel_img3.src = "./CSS/assets/enzo3.jpg"
       h_3.innerHTML = `Detalhes`
       p_3.innerHTML = ``
+
     } else if (ferrari == '') {
+
       ferraris.style.display = 'none'
+
+    }
+
+  }
+  var modelos = ['f250', 'f458', 'enzo', 'laferrari', 'f40']
+
+  var garagem = {
+    f250: ['./CSS/assets/250gt.jpg', './CSS/assets/250gto4.jpg', './CSS/assets/250gto3.jpg'],
+    f458: ['./CSS/assets/458it4.jpg', './CSS/assets/458it2.jpg', './CSS/assets/458it.jpg'],
+    enzo: ['./CSS/assets/enzo.jpg', "./CSS/assets/enzo2.jpg", "./CSS/assets/enzo3.jpg"],
+    f40: ['./CSS/assets/f40.jpg', './CSS/assets/f402.jpg', './CSS/assets/f406.jpg'],
+    laferrari: ["./CSS/assets/laferrari6.jpg", "./CSS/assets/laferrari7.jpg", "./CSS/assets/laferrari3.jpg"]
+  }
+
+  function montar() {
+    fotos.style.display = 'block'
+
+    var nu1 = parseInt(Math.random() * 5)
+    var nu2 = parseInt(Math.random() * 5)
+    var nu3 = parseInt(Math.random() * 5)
+
+    var aleatoria = parseInt(Math.random() * 3)
+
+
+    // img_m1
+    if (modelos[nu1] == 'f40') {
+      img_m1.src = `${garagem.f40[aleatoria]}`
+    } else if (modelos[nu1] == 'f250') {
+      img_m1.src = `${garagem.f250[aleatoria]}`
+    } else if (modelos[nu1] == 'enzo') {
+      img_m1.src = `${garagem.enzo[aleatoria]}`
+    } else if (modelos[nu1] == 'laferrari') {
+      img_m1.src = `${garagem.laferrari[aleatoria]}`
+    } else if (modelos[nu1] == 'f458') {
+      img_m1.src = `${garagem.f458[aleatoria]}`
+    }
+
+    //img_m2
+    if (modelos[nu2] == 'f40') {
+      img_m2.src = `${garagem.f40[aleatoria]}`
+    } else if (modelos[nu2] == 'f250') {
+      img_m2.src = `${garagem.f250[aleatoria]}`
+    } else if (modelos[nu2] == 'enzo') {
+      img_m2.src = `${garagem.enzo[aleatoria]}`
+    } else if (modelos[nu2] == 'laferrari') {
+      img_m2.src = `${garagem.laferrari[aleatoria]}`
+    } else if (modelos[nu2] == 'f458') {
+      img_m2.src = `${garagem.f458[aleatoria]}`
+    }
+
+    //img_m3
+    if (modelos[nu3] == 'f40') {
+      img_m3.src = `${garagem.f40[aleatoria]}`
+    } else if (modelos[nu3] == 'f250') {
+      img_m3.src = `${garagem.f250[aleatoria]}`
+    } else if (modelos[nu3] == 'enzo') {
+      img_m3.src = `${garagem.enzo[aleatoria]}`
+    } else if (modelos[nu3] == 'laferrari') {
+      img_m3.src = `${garagem.laferrari[aleatoria]}`
+    } else if (modelos[nu3] == 'f458') {
+      img_m3.src = `${garagem.f458[aleatoria]}`
     }
   }
 </script>
