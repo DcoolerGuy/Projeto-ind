@@ -38,7 +38,6 @@ body{
 .banner{
     display: flex;
     flex-direction:row;
-    
 }
 
 .navbar{
@@ -59,7 +58,17 @@ body{
     background-image: url(./assets/whiteback.webp);
 }
 
+.back p{
+    position: absolute;
+    top:63%;
+    left: 17%;
+}
 
+.back img{
+    position: absolute;
+    top:25%;
+    left: 20%;
+}
 
 .back b{
     color: rgb(0, 0, 0);

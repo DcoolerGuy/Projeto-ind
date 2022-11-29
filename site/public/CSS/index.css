@@ -59,7 +59,7 @@ a {
 
 ul {
     position: relative;
-    width: 550px;
+    width: 700px;
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -73,16 +73,6 @@ ul {
 .navbar a:hover {
     color: red;
 
-}
-
-.navbar button {
-
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: medium;
-    padding: 4px 10px;
-    color: black;
-    border: 2px solid red;
 }
 
 
@@ -116,7 +106,7 @@ ul {
 .banner .content {
     position: absolute;
     z-index: 1;
-    top: 35px;
+    top: 44px;
     left: 3%;
     color: white;
 }
@@ -188,7 +178,7 @@ html {
 }
 
 .essere h1 {
-    font-size: 76px;
+    font-size: 55px;
     font-family: 'ferrari-title';
 }
 
