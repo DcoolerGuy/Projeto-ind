@@ -1,14 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
+@font-face {
+    font-family: ferrari-body;
+    src: url(./assets/Ferrari-SansRegular.woff2);
+  }
+
+
+  @font-face {
+    font-family: ferrari-title;
+    src: url(./assets/Ferrari-SansMedium.woff2);
+  }
+
 p {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'ferrari-body', sans-serif;
 }
 
 h1 h2 {
     font-size: 50px;
     font-style: italic;
     color: white;
-    font-family: 'Bitter';
+    font-family: 'ferrari-title';
 }
 
 body {
@@ -58,11 +69,11 @@ a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'ferrari-title', sans-serif;
 }
 
 ul {
-    width: 500px;
+    width: 600px;
     background-color: transparent;
     display: flex;
     flex-direction: row;
@@ -107,7 +118,7 @@ ul {
     font-size: 30px;
     color: rgb(11, 9, 9);
     background-color: transparent;
-    font-family: 'Kanit', sans-serif;
+    font-family: 'ferrari-body', sans-serif;
 }
 
 .gallery img {
@@ -115,17 +126,12 @@ ul {
     box-shadow: 0 1px 15px 5px rgb(30, 29, 29);
 }
 
-h3,p{
-    text-shadow: rgb(80, 79, 79)1px 2px 11px;
-}
-
 .leilao {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     width: 85%;
-    background: rgb(145, 145, 145);
-    background: linear-gradient(141deg, rgb(129, 128, 128) 20%, rgba(255, 255, 255, 1) 100%);
+    background: rgb(250, 247, 247);
     padding: 0px 0px 2px 0px;
     border-radius: 10px;
     box-shadow: 0 1px 15px 5px rgb(156, 155, 155);
@@ -193,6 +199,18 @@ h3,p{
     box-shadow: 0 1px 5px 9px rgb(19, 19, 19);
     margin-top: 40px;
     border-radius: 10px 10px 0px 0px;
+}
+
+.anunciar{
+    margin-top: 30px;
+    font-size: 27px;
+    color: #fefefe;
+    font-family: 'ferrari-title';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    text-align: center;
 }
 
 .footertxt {

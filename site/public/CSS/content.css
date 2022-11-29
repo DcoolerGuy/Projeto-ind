@@ -1,23 +1,33 @@
 
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
-* {
-    font-family: 'Kanit', sans-serif;
+  @font-face {
+    font-family: ferrari-body;
+    src: url(./assets/Ferrari-SansRegular.woff2);
+  }
 
+
+  @font-face {
+    font-family: ferrari-title;
+    src: url(./assets/Ferrari-SansMedium.woff2);
+  }
+
+* {
+    font-family: 'ferrari-body', sans-serif;
 }
 
 h2 {
     font-size: 50px;
     font-style: italic;
     color: white;
-    font-family: 'Bitter';
+    font-family: 'ferrari-title';
 }
 
 body {
     margin: 0;
     padding: 0;
     background-image: url(./assets/whiteback.webp);
+
 }
 
 html {
@@ -124,11 +134,17 @@ ul {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
 }
 
-.hist p {
+.paragraph{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width: 90%;
+}
+
+.paragraph p {
+    width: 60%;
 }
 
 

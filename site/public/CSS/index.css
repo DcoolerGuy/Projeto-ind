@@ -2,8 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
 
+@font-face {
+    font-family: ferrari-body;
+    src: url(./assets/Ferrari-SansRegular.woff2);
+  }
+
+
+  @font-face {
+    font-family: ferrari-title;
+    src: url(./assets/Ferrari-SansMedium.woff2);
+  }
+
 * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'ferrari-body', sans-serif;
 }
 
 
@@ -178,7 +189,7 @@ html {
 
 .essere h1 {
     font-size: 76px;
-    font-family: 'Bitter';
+    font-family: 'ferrari-title';
 }
 
 .essere p {
