@@ -12,7 +12,6 @@
     <script src="./js/funcoes.js"></script>
     <title>Leilão</title>
 </head>
-<!-- onload="validarSessao(), atualizarFeed()" -->
 <body>
     <div class="navbar">
         <div class="logo">
@@ -70,13 +69,11 @@
 
             </div>
             <p>Ultimo Lance: <b id="b_valor"></b></p>
-            <form id="form_postagem" method="post" onsubmit="return publicar()">
-                <label>
-                    <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
-                </label>
-                <br>
-                <button>Enviar</button>
-            </form>
+            <label>
+                <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
+            </label>
+            <br>
+            <button onclick="cadastrar()">Enviar</button>
             <div id="feed_container" class="feed-container">
             </div>
         </div>
@@ -103,44 +100,43 @@
 
 <script>
     var maisrecente = 12000000.00
-    var valorlance = Number(in_lance.value)
-
+    
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
+    
+  function cadastrar(){
 
-    function publicar() {
-        var idUsuario = sessionStorage.ID_USUARIO;
+    var id_usuario = sessionStorage.ID_USUARIO
+    var lance = in_lance.value
 
-        var corpo = {
-            lance: form_postagem.valorlance,
-        }
-
-        fetch(`/avisos/publicar/${idUsuario}`, {
-            method: "post",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(corpo)
-        }).then(function (resposta) {
-
-            console.log("resposta: ", resposta);
-
-            if (resposta.ok) {
-                window.alert("Lance realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/leilao.html";
-                limparFormulario();
-            } else if (resposta.status == 404) {
-                window.alert("Deu 404!");
-            } else {
-                throw ("Houve um erro ao tentar realizar a postagem! Código da resposta: " + resposta.status);
+    fetch("/avisos/publicar", {
+        method: "POST", 
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuarioServer: id_usuario, 
+            lanceServer: lance
+        })
+    })
+        .then(function (resposta){
+            if(resposta.ok){
+                console.log("Deu bom")
             }
-        }).catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
+            else{
+                console.log("Deu ruim");
+            }
+        })
+        .catch(function (erro){
+            console.log(erro);
+            console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
 
-        return false;
-    }
+        b_valor.innerHTML = lance
+    
+  }
 
 
 
@@ -161,7 +157,7 @@
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var valorlance = resposta.lancefinal
+                    var valorlance = resposta.valorlance
 
                     b_valor.innerHTML = `Ultimo lance: R$${valorlance}`
 

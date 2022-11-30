@@ -66,28 +66,23 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var valorlance = req.body.in_lance;
-    var idUsuario = req.params.idUsuario;
+    var valor = req.body.lanceServer;
+    var idUsuario = req.body.idUsuarioServer;
 
-    if (valorlance == undefined) {
-        res.status(400).send("lance está indefinido!");
-    } else if (idUsuario == undefined) {
-        res.status(403).send("O id do usuário está indefinido!");
-    } else {
-        avisoModel.publicar(valorlance, idUsuario)
-            .then(
-                function (resultado) {
-                    res.json(resultado);
-                }
-            )
-            .catch(
-                function (erro) {
-                    console.log(erro);
-                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-                    res.status(500).json(erro.sqlMessage);
-                }
-            );
-    }
+    avisoModel.publicar(valor, idUsuario)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        )
+        .catch(
+            function (erro) {
+                console.log(erro);
+                console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    
 }
 
 function editar(req, res) {

@@ -19,7 +19,7 @@ router.get("/pesquisar/:descricao", function (req, res) {
     avisoController.pesquisarDescricao(req, res);
 });
 
-router.post("/publicar/:idUsuario", function (req, res) {
+router.post("/publicar", function (req, res) {
     avisoController.publicar(req, res);
 });
 

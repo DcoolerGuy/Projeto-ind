@@ -8,13 +8,11 @@ function listar() {
     u.nome,
     u.email,
     u.senha,
-    l.idleilao,
-    l.fkproprietario,
-    l.valorinicial,
-    l.lancefinal,
-    l.fkvencedor
-    from usuario u inner join leilao l 
-    on l.fkvencedor = u.idusuario;
+    l.idlance,
+    l.valorlance,
+    l.fkusuario
+    from usuario as u inner join lance as l 
+    on l.fkusuario = u.idusuario;
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -62,10 +60,10 @@ function listarPorUsuario(idUsuario) {
     return database.executar(instrucao);
 }
 
-function publicar(valorlance, idUsuario) {
-    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", valorlance, idUsuario);
+function publicar(valor, idUsuario) {
+    console.log("ACESSEI O AVISO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function publicar(): ", valor, idUsuario);
     var instrucao = `
-    update leilao set fkvencedor = ${idUsuario}, lancefinal = ${valorlance} where idleilao = 104;
+    insert into lance(valorlance,fkusuario,fkferrari)values (${valor},${idUsuario},50);
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
