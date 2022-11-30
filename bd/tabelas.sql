@@ -66,3 +66,17 @@ select*from usuario join leilao where idusuario = fkproprietario;
 select*from usuario join leilao on idusuario = fkproprietario;
 select*from usuario join endereco on idusuario=fkusuario;
 
+
+select 
+u.idusuario,
+u.nome,
+u.email,
+u.senha,
+l.idleilao,
+l.fkproprietario,
+l.valorinicial,
+l.lancefinal,
+l.fkvencedor
+from usuario u inner join leilao l 
+on l.fkvencedor = u.idusuario;
+

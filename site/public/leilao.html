@@ -12,8 +12,8 @@
     <script src="./js/funcoes.js"></script>
     <title>Leilão</title>
 </head>
-
-<body onload="validarSessao(), atualizarFeed()">
+<!-- onload="validarSessao(), atualizarFeed()" -->
+<body>
     <div class="navbar">
         <div class="logo">
             <img src="./CSS/assets/ferrariwhite.png" alt="" width="100px">
@@ -23,21 +23,22 @@
         <ul>
             <li><a href="content.html">Murais de fotos</a></li>
             <p style="cursor:pointer;color: rgb(0, 255, 0);">|</p>
-            <li><a href="content.html">Conheca os modelos</a></li>
+            <li><a href="content.html#mural">Conheca os modelos</a></li>
             <p style="cursor:pointer;color: rgb(255, 255, 255);;">|</p>
             <li class="logcad"><a onclick="LimparSessao()">Log-out</a></li>
             <p style="cursor:pointer;color: red;">|</p>
         </ul>
     </div>
 
-    <h3>Olá, <span id="b_usuario" style="color: red;">usuário</span>!</h3>
+    
 
     <div class="leilao">
-        <div class="gallery autoplay items-3">
+        
+        <div class="gallery items-3">
             <div id="item-1" class="control-operator"></div>
             <div id="item-2" class="control-operator"></div>
             <div id="item-3" class="control-operator"></div>
-
+            
             <figure class="item">
                 <img src="./CSS/assets/f40l3.jpg" alt="" width="100%">
                 <h3>Modelo: F40</h3>
@@ -52,6 +53,12 @@
                 <img src="./CSS/assets/f40l1.jpg" alt="" width="100%">
                 <h3>Ano: 1991</h3>
             </figure>
+            <div class="controls">
+                <a href="#item-1" class="control-button">•</a>
+                <a href="#item-2" class="control-button">•</a>
+                <a href="#item-3" class="control-button">•</a>
+              </div>
+            
             <div class="desc">
                 <p>
                     Valor inicial: R$12.000.000,00<br>
@@ -77,7 +84,7 @@
 
 
     <div class="anunciar">
-        <h2>Deseja leiloar sua Ferrari?</h2>
+        <h2 style="font-style:italic;">Deseja leiloar sua Ferrari?</h2>
         <p>Nos envie um e-mail e entraremos em contato para agendar uma avaliação do seu veiculo</p>
         <a href="mailto: joao.penna@sptech.school" target="_blank">
         <img src="./CSS/assets/email.png" alt="" width="100px" style="cursor: pointer;">

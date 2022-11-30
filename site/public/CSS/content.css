@@ -84,7 +84,6 @@ ul {
     justify-content: space-between;
     list-style: none;
     margin-right: 40px;
-
 }
 
 .navbar a:hover {
@@ -92,7 +91,6 @@ ul {
 }
 
 .navbar button {
-
     cursor: pointer;
     border-radius: 30px;
     font-size: medium;

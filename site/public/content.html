@@ -26,7 +26,7 @@
       <p style="cursor:default;color: rgb(22, 165, 22);">|</p>
       <li><a href="#favs">Conheca os modelos</a></li>
       <p style="cursor:default;color: rgb(255, 255, 255);;">|</p>
-      <li class="logcad"><a onclick="limparSessao()">Log-out</a></li>
+      <li style="cursor: pointer;"><a onclick="limparSessao()">Log-out</a></li>
       <p style="cursor:default;color: rgb(201, 9, 9);">|</p>
 
     </ul>
@@ -38,12 +38,17 @@
   <div class="hist">
     <h2>A história contada por imagens</h2>
     <div class="paragraph">
-    <p style="font-size: 22px;">Com o passar dos anos, A Ferrari foi se consolidando como a montadora de veículos mais influente no mundo, ela pode não ser feita para a maioria, porém todas as suas concorrentes se inspiram e almejam um dia em que elas possam estar de igual á igual com ela. E o projeto <span style="color: rgb(201, 9, 9);"><i>Essere Ferrari</i></span> tem o intuito de mostrar ao publico que não entende a sua história, a entender a evolução da Ferrari ao longo do tempo<br><br><br><span
-        style="font-size: 20px;">"O fato é que não dirijo apenas para ir de A a B. Gosto de sentir as reações do carro,
-        tornando-me parte dele."<br>
-        <i>-Enzo Ferrari</i></span> </p>
-        <img src="./CSS/assets/ferrariwhite.png" alt="" width="550px">
-        </div>
+      <p style="font-size: 22px;">Com o passar dos anos, A Ferrari foi se consolidando como a montadora de veículos mais
+        influente no mundo, ela pode não ser feita para a maioria, porém todas as suas concorrentes se inspiram e
+        almejam um dia em que elas possam estar de igual á igual com ela. E o projeto <span
+          style="color: rgb(201, 9, 9);"><i>Essere Ferrari</i></span> tem o intuito de mostrar ao publico que não
+        entende a sua história, a entender a evolução da Ferrari ao longo do tempo<br><br><br><span
+          style="font-size: 20px;">"O fato é que não dirijo apenas para ir de A a B. Gosto de sentir as reações do
+          carro,
+          tornando-me parte dele."<br>
+          <i>-Enzo Ferrari</i></span> </p>
+      <img src="./CSS/assets/ferrariwhite.png" alt="" width="550px">
+    </div>
   </div>
 
 
@@ -282,9 +287,9 @@
       </div>
     </div>
 
-    <div class="mural">
+    <div class="mural" id="mural">
       <h2>Quer descobrir sua futura garagem?</h2>
-      <button onclick="montar()">Montar</button>
+      <button onclick="teste()">Montar</button>
       <div id="fotos" class="fotos" style="display: none;">
 
         <div class="gallery autoplay items-3">
@@ -454,25 +459,48 @@
   var modelos = ['f250', 'f458', 'enzo', 'laferrari', 'f40']
 
   var garagem = {
-    f250: ['./CSS/assets/250gt.jpg', './CSS/assets/250gto4.jpg', './CSS/assets/250gto3.jpg'],
-    f458: ['./CSS/assets/458it4.jpg', './CSS/assets/458it2.jpg', './CSS/assets/458it.jpg'],
-    enzo: ['./CSS/assets/enzo.jpg', "./CSS/assets/enzo4.jpg", "./CSS/assets/enzo6.jpg"],
-    f40: ['./CSS/assets/f40.jpg', './CSS/assets/f402.jpg', './CSS/assets/f406.jpg'],
-    laferrari: ["./CSS/assets/laferrari6.jpg", "./CSS/assets/laferrari7.jpg", "./CSS/assets/laferrari5.jpg"]
+    f250: ['./CSS/assets/250gt.jpg', './CSS/assets/250gto4.jpg', './CSS/assets/250gto3.jpg','./CSS/assets/250gto2.jpg','./CSS/assets/250gto5.jpg'],
+
+    f458: ['./CSS/assets/458it4.jpg', './CSS/assets/458it2.jpg', './CSS/assets/458it.jpg','./CSS/assets/458gt32.jpg','./CSS/assets/458.jpg',],
+
+    enzo: ['./CSS/assets/enzo.jpg', "./CSS/assets/enzo4.jpg", "./CSS/assets/enzo6.jpg",'./CSS/assets/enzo3.jpg','./CSS/assets/enzo5.jpg'],
+
+    f40: ['./CSS/assets/f40.jpg', './CSS/assets/f402.jpg', './CSS/assets/f406.jpg','./CSS/assets/f40red.jpg','./CSS/assets/f40l1.jpg'],
+
+    laferrari: ["./CSS/assets/laferrari6.jpg", "./CSS/assets/laferrari7.jpg", "./CSS/assets/laferrari5.jpg","./CSS/assets/laferrari.jpg","./CSS/assets/lal1.jpg"]
   }
 
-  function montar() {
-    fotos.style.display = 'block'
+  
+  function teste() {
+    var contador = 0
 
-    var nu1 = parseInt(Math.random() * 5)
-    var nu2 = parseInt(Math.random() * 5)
-    var nu3 = parseInt(Math.random() * 5)
+    for (var i = 0; i < 3; i++) {
+      if (i == 0) {
+        contador += 1
+        var nu1 = parseInt(Math.random() * 5)
+      } else if (i == 1) {
+        contador += 1
+        var nu2 = parseInt(Math.random() * 5)
+      } else if (i == 2) {
+        contador += 1
+        var nu3 = parseInt(Math.random() * 5)
+      }
+      while (nu2 == nu1 || nu2 == nu3) {
+        nu2 = parseInt(Math.random() * 5)
+      }
 
-    var aleatoria = parseInt(Math.random() * 3)
+      while (nu3 == nu1 || nu3 == nu2) {
+        nu3 = parseInt(Math.random() * 5)
+      }
 
 
-    // img_m1
-    if (modelos[nu1] == 'f40') {
+      if (contador == 3) {
+        var aleatoria = parseInt(Math.random() * 5)
+        fotos.style.display = 'block'
+
+      }
+      // img_m1
+    } if (modelos[nu1] == 'f40') {
       img_m1.src = `${garagem.f40[aleatoria]}`
     } else if (modelos[nu1] == 'f250') {
       img_m1.src = `${garagem.f250[aleatoria]}`

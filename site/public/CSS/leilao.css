@@ -145,13 +145,14 @@ ul {
 }
 
 .leilao input {
-    margin-left: 40%;
+    margin-left: 35%;
     margin-bottom: 15px;
     padding: 10px 0px 10px 0px;
     background-color: rgb(255, 255, 255);
-    color: rgb(238, 238, 238);
+    color: rgb(10, 10, 10);
     font-size: 20px;
     text-align: center;
+    font-family: 'ferrari-body';
     border: 2px solid rgb(201, 9, 9);
     border-radius: 10px;
     transition: 0.3s;
@@ -162,9 +163,10 @@ ul {
     background-color: #131212;
     color: #ffffff;
 }
-
+ 
 .leilao button {
-    margin-left: 46%;
+    font-family: 'ferrari-body';
+    margin-left: 45%;
     margin-bottom: 15px;
     padding: 9px 15px 9px 15px;
     background-color: rgb(255, 255, 255);

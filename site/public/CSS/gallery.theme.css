@@ -26,7 +26,7 @@
 }
 .gallery .controls {
   position: absolute;
-  bottom: 0;
+  top: 550px;
   width: 100%;
   text-align: center;
 }
