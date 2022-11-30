@@ -66,15 +66,15 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var lance = req.body.lance;
+    var valorlance = req.body.in_lance;
     var idUsuario = req.params.idUsuario;
 
-    if (lance == undefined) {
-        res.status(400).send("O título está indefinido!");
+    if (valorlance == undefined) {
+        res.status(400).send("lance está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(lance,idUsuario)
+        avisoModel.publicar(valorlance, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);

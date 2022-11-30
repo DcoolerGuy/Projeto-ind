@@ -10,10 +10,10 @@
     <link rel="stylesheet" href="css/gallery.min.css">
     <link rel="shortcut icon" href="./CSS/assets/ferrariwhite.png">
     <script src="./js/funcoes.js"></script>
-    <title>Document</title>
+    <title>Leilão</title>
 </head>
 
-<body>
+<body onload="validarSessao(), atualizarFeed()">
     <div class="navbar">
         <div class="logo">
             <img src="./CSS/assets/ferrariwhite.png" alt="" width="100px">
@@ -29,6 +29,8 @@
             <p style="cursor:pointer;color: red;">|</p>
         </ul>
     </div>
+
+    <h3>Olá, <span id="b_usuario" style="color: red;">usuário</span>!</h3>
 
     <div class="leilao">
         <div class="gallery autoplay items-3">
@@ -60,7 +62,7 @@
                 </p>
 
             </div>
-            <p>Ultimo Lance: <b id="lance1">lancefinal</b></p>
+            <p>Ultimo Lance: <b id="b_valor"></b></p>
             <form id="form_postagem" method="post" onsubmit="return publicar()">
                 <label>
                     <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
@@ -68,46 +70,11 @@
                 <br>
                 <button>Enviar</button>
             </form>
+            <div id="feed_container" class="feed-container">
+            </div>
         </div>
     </div>
 
-    <div class="leilao">
-        <div class="gallery autoplay items-3">
-            <div id="item-1" class="control-operator"></div>
-            <div id="item-2" class="control-operator"></div>
-            <div id="item-3" class="control-operator"></div>
-
-            <figure class="item">
-                <img src="./CSS/assets/lal1.jpg" alt="" width="100%">
-                <h3>Modelo: LaFerrari</h3>
-            </figure>
-
-            <figure class="item">
-                <img src="./CSS/assets/lal2.jpg" alt="" width="100%">
-                <h3>Cor: Rosso Corsa</h3>
-            </figure>
-
-            <figure class="item">
-                <img src="./CSS/assets/lal3.jpg" alt="" width="100%">
-                <h3>Ano: 2014</h3>
-            </figure>
-
-            <p>
-                Valor inicial: R$14.000.000,00<br>
-                Kilometragem: 16.406<br>
-                Peças Modificadas: Rodas 19" Rays 57FXX<br>
-                Ótimo estado<br>
-            </p>
-            <p>Ultimo Lance: <b id="lance1">lancefinal</b></p>
-            <form id="form_postagem" method="post" onsubmit="return publicar()">
-                <label>
-                    <input name="lance" id="in_lance" maxlength="100" placeholder="Faça o seu lance">
-                </label>
-                <br>
-                <button>Enviar</button>
-            </form>
-        </div>
-    </div>
 
     <div class="anunciar">
         <h2>Deseja leiloar sua Ferrari?</h2>
@@ -128,8 +95,8 @@
 </html>
 
 <script>
-
-
+    var maisrecente = 12000000.00
+    var valorlance = Number(in_lance.value)
 
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
@@ -139,7 +106,7 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            leilao: form_postagem.in_lance.value,
+            lance: form_postagem.valorlance,
         }
 
         fetch(`/avisos/publicar/${idUsuario}`, {
@@ -153,10 +120,9 @@
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
-                window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "leilao.html";
+                window.alert("Lance realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
+                window.location = "/leilao.html";
                 limparFormulario();
-                finalizarAguardar();
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -164,12 +130,14 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
         });
 
         return false;
-
     }
+
+
+
+   
 
     function atualizarFeed() {
         //aguardar();
@@ -186,42 +154,18 @@
                 resposta.json().then(function (resposta) {
                     console.log("Dados recebidos: ", JSON.stringify(resposta));
 
-                    var feed = document.getElementById("feed_container");
-                    feed.innerHTML = "";
-                    for (let i = 0; i < resposta.length; i++) {
-                        var publicacao = resposta[i];
+                    var valorlance = resposta.lancefinal
 
-                        // criando e manipulando elementos do HTML via JavaScript
-                        var divPublicacao = document.createElement("div");
-                        var spanID = document.createElement("span");
-                        var spanTitulo = document.createElement("span");
-                        var spanNome = document.createElement("span");
+                    b_valor.innerHTML = `Ultimo lance: R$${valorlance}`
 
+                     
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-
-                        divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
-                        spanNome.className = "publicacao-nome";
-                        spanTitulo.className = "publicacao-titulo";
-
-                        divPublicacao.appendChild(spanID);
-                        divPublicacao.appendChild(spanNome);
-                        divPublicacao.appendChild(spanTitulo);
-                        divPublicacao.appendChild(divDescricao);
-                        feed.appendChild(divPublicacao);
-                    }
-
-                    finalizarAguardar();
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
             console.error(resposta);
-            finalizarAguardar();
         });
     }
 
