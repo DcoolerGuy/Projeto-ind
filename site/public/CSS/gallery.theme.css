@@ -1,11 +1,11 @@
 .gallery .control-button {
-  color: rgb(236, 0, 0);
-  color: rgba(255, 0, 0, 0.4);
+  color: rgb(204, 204, 204);
+    color: rgba(255, 255, 255, .4)
 }
 
 .gallery .control-button:hover {
-  color: rgb(255, 0, 0);
-  color: rgba(255, 0, 0, 0.8);
+  color: rgb(204, 204, 204);
+    color: rgba(255, 255, 255, .4)
 }
 
 /*

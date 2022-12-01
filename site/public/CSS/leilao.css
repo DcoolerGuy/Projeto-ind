@@ -215,6 +215,14 @@ ul {
     text-align: center;
 }
 
+.feed-container{
+    text-align: center;
+    font-family: 'ferrari-body';
+    color: #131212;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
 .footertxt {
     color: rgb(11, 11, 11);
     font-size: 20px;

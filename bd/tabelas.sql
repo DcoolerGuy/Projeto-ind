@@ -8,6 +8,7 @@ email varchar(45),
 senha char(10)
 )auto_increment=10;
 
+
 create table endereco(
 idendereco int auto_increment,
 fkusuario int,
@@ -25,20 +26,17 @@ cor varchar(45),
 ano int,
 fkproprietario int,
 foreign key (fkproprietario) references usuario(idusuario),
-fkleilao int,
-foreign key (fkleilao) references leilao(idleilao),
-primary key (idferrari,fkleilao,fkproprietario)
+primary key (idferrari,fkproprietario)
 )auto_increment=50;
 
-create table leilao(
-idleilao int auto_increment,
-fkproprietario int,
-foreign key (fkproprietario) references usuario(idusuario),
-primary key(idleilao,fkproprietario),
-valorInicial decimal(13,2),
-fkvencedor int,
-foreign key (fkvencedor) references usuario(idusuario),
-lancefinal decimal(13,2)
+create table lance(
+idlance int auto_increment,
+valorlance decimal(13,2),
+fkusuario int,
+foreign key (fkusuario) references usuario(idusuario),
+fkferrari int,
+foreign key (fkferrari)references ferrari(idferrari),
+primary key(idlance,fkferrari)
 ) auto_increment=100;
 
 insert into usuario values
@@ -47,14 +45,16 @@ insert into usuario values
 select*from usuario;
 
 insert into ferrari values
-(null,'f40','rosso-corsa',1991,10,104),
-(null,'laferari','rosso-corsa',2014,11,105);
+(null,'f40','rosso-corsa',1991,10),
+(null,'laferari','rosso-corsa',2014,11);
 select*from ferrari;
 
-insert into leilao values
-(null,10,12000000,null,null),
-(null,11,14000000,null,null);
-select*from leilao;
+select * from lance;
+select*from lance order by idLance desc limit 1;
+
+SELECT l.valorLance as ultimolance FROM lance as l order by idLance desc limit 1;
+insert into lance values
+(null,13000000,11,50);
 
 insert into endereco values
 (null,10,08780600,'rua fausto prezes','60'),
@@ -66,17 +66,33 @@ select*from usuario join leilao where idusuario = fkproprietario;
 select*from usuario join leilao on idusuario = fkproprietario;
 select*from usuario join endereco on idusuario=fkusuario;
 
+select * from lance;
+
+desc lance;
+
+
+
+    select 
+    u.idusuario,
+    u.nome,
+    u.email,
+    u.senha,
+    l.idlance,
+    l.valorlance,
+    l.fkusuario,
+    l.fkferrari
+    from usuario u inner join lance l 
+    on l.fkusuario = u.idusuario;
+
+insert into lance (valorlance,fkusuario,fkferrari)values (13000000,10,50);
 
 select 
-u.idusuario,
-u.nome,
-u.email,
-u.senha,
-l.idleilao,
-l.fkproprietario,
-l.valorinicial,
-l.lancefinal,
-l.fkvencedor
-from usuario u inner join leilao l 
-on l.fkvencedor = u.idusuario;
-
+    u.idusuario,
+    u.nome,
+    u.email,
+    u.senha,
+    l.idlance,
+    l.valorlance,
+    l.fkusuario
+    from usuario as u inner join lance as l 
+    on l.fkusuario = u.idusuario;

@@ -12,7 +12,8 @@
     <script src="./js/funcoes.js"></script>
     <title>Leilão</title>
 </head>
-<body>
+
+<body onload="mostrar()">
     <div class="navbar">
         <div class="logo">
             <img src="./CSS/assets/ferrariwhite.png" alt="" width="100px">
@@ -24,20 +25,20 @@
             <p style="cursor:pointer;color: rgb(0, 255, 0);">|</p>
             <li><a href="content.html#mural">Conheca os modelos</a></li>
             <p style="cursor:pointer;color: rgb(255, 255, 255);;">|</p>
-            <li class="logcad"><a onclick="LimparSessao()">Log-out</a></li>
+            <li class="logcad"><a onclick="limparSessao()" style="cursor: pointer;">Log-out</a></li>
             <p style="cursor:pointer;color: red;">|</p>
         </ul>
     </div>
 
-    
+
 
     <div class="leilao">
-        
+
         <div class="gallery items-3">
             <div id="item-1" class="control-operator"></div>
             <div id="item-2" class="control-operator"></div>
             <div id="item-3" class="control-operator"></div>
-            
+
             <figure class="item">
                 <img src="./CSS/assets/f40l3.jpg" alt="" width="100%">
                 <h3>Modelo: F40</h3>
@@ -56,8 +57,8 @@
                 <a href="#item-1" class="control-button">•</a>
                 <a href="#item-2" class="control-button">•</a>
                 <a href="#item-3" class="control-button">•</a>
-              </div>
-            
+            </div>
+
             <div class="desc">
                 <p>
                     Valor inicial: R$12.000.000,00<br>
@@ -84,7 +85,7 @@
         <h2 style="font-style:italic;">Deseja leiloar sua Ferrari?</h2>
         <p>Nos envie um e-mail e entraremos em contato para agendar uma avaliação do seu veiculo</p>
         <a href="mailto: joao.penna@sptech.school" target="_blank">
-        <img src="./CSS/assets/email.png" alt="" width="100px" style="cursor: pointer;">
+            <img src="./CSS/assets/email.png" alt="" width="100px" style="cursor: pointer;">
         </a>
     </div>
 
@@ -99,52 +100,15 @@
 </html>
 
 <script>
-    var maisrecente = 12000000.00
-    
+
     function limparFormulario() {
         document.getElementById("form_postagem").reset();
     }
-    
-  function cadastrar(){
 
-    var id_usuario = sessionStorage.ID_USUARIO
-    var lance = in_lance.value
+    var ultimolance = []
 
-    fetch("/avisos/publicar", {
-        method: "POST", 
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-            idUsuarioServer: id_usuario, 
-            lanceServer: lance
-        })
-    })
-        .then(function (resposta){
-            if(resposta.ok){
-                console.log("Deu bom")
-            }
-            else{
-                console.log("Deu ruim");
-            }
-        })
-        .catch(function (erro){
-            console.log(erro);
-            console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
-            res.status(500).json(erro.sqlMessage);
-        })
-
-        b_valor.innerHTML = lance
-    
-  }
-
-
-
-   
-
-    function atualizarFeed() {
-        //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+    function mostrar() {
+        fetch("/avisos/mostrar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
@@ -155,22 +119,76 @@
                 }
 
                 resposta.json().then(function (resposta) {
-                    console.log("Dados recebidos: ", JSON.stringify(resposta));
+                    console.log("Dados recebidos: ", (resposta));
 
-                    var valorlance = resposta.valorlance
+                    var valorlance = resposta[0].valorLance
 
-                    b_valor.innerHTML = `Ultimo lance: R$${valorlance}`
+                    ultimolance.push(`${valorlance}`)
 
-                     
+                    console.log("adjasjdlk", ultimolance)
+
+                    b_valor.innerHTML = `${ultimolance[0]}`
 
                 });
             } else {
                 throw ('Houve um erro na API!');
             }
         }).catch(function (resposta) {
-            console.error(resposta);
+            console.warn(resposta);
         });
     }
+
+
+    function cadastrar() {
+
+        var atual = Number(ultimolance[ultimolance.length-1])
+        var valor = Number(in_lance.value)
+        var id_usuario = sessionStorage.ID_USUARIO
+        var lance = in_lance.value
+        var atual = atual + 30000
+
+        if (valor > atual) {
+            fetch("/avisos/publicar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    idUsuarioServer: id_usuario,
+                    lanceServer: lance
+                })
+            })
+                .then(function (resposta) {
+                    if (resposta.ok) {
+                        console.log("Deu bom")
+                    }
+                    else {
+                        console.log("Deu ruim");
+                    }
+                })
+                .catch(function (erro) {
+                    console.log(erro);
+                    console.log("Houve um erro ao realizar o post: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                })
+
+            b_valor.innerHTML = lance
+
+            ultimolance.push(`${lance}`)
+
+            feed_container.innerHTML = `Lance feito com sucesso`
+            setTimeout(zerar,3000)
+
+            
+        } else{
+            feed_container.innerHTML = `Lance não realizado: O lance deve ser R$30.000 a mais do que o ultimo lance`
+        }
+        
+    }
+    
+    
+    
+   
 
     function testar() {
         aguardar();
@@ -186,5 +204,6 @@
 
         return false;
     }
+    
 
 </script>
