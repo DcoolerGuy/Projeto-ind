@@ -28,7 +28,7 @@
                                 <img src="./CSS/assets/ferrariwhite.png" alt="" width="140px"></a>
                         </div>
                         <div class="pos">
-                            <h1>Login</h1>
+                            <h1 style="font-style:italic">Login</h1>
                             Usuario <br>
                             <input type="text" placeholder="seuemail@dominio.com" id="in_email"> <br>
                             Senha <br>
@@ -95,6 +95,7 @@
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idusuario;
+
 
                     setTimeout(function () {
                         window.location = "content.html";

@@ -135,6 +135,15 @@ a {
     font-style: bold;
     font-size: 20px;
     cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+button:hover{
+    cursor: pointer;
+    border: 2px solid rgb(253, 253, 253);
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
 }
 
 .pos{
@@ -146,11 +155,17 @@ a {
 }
 
 
-input{
-    text-align: center;
+input {
     font-size: 20px;
-    border:2px solid rgb(201, 9, 9);
+    text-align: center;
+    border: 2px solid rgb(201, 9, 9);
     color: black;
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
+    transition: 0.3s;
+}
+
+input:hover{
+    background-color: #7e0d0d;
+    color: white;
 }

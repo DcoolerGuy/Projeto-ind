@@ -1,19 +1,18 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
 @font-face {
     font-family: ferrari-body;
     src: url(./assets/Ferrari-SansRegular.woff2);
-  }
+}
 
 
-  @font-face {
+@font-face {
     font-family: ferrari-title;
     src: url(./assets/Ferrari-SansMedium.woff2);
-  }
+}
 
 
-*{
+* {
     font-family: 'ferrari-body', sans-serif;
 }
 
@@ -29,18 +28,18 @@
     background-color: rgb(201, 9, 9);
 }
 
-body{
+body {
     padding: 0;
     margin: 0;
 }
 
 
-.banner{
+.banner {
     display: flex;
-    flex-direction:row;
+    flex-direction: row;
 }
 
-.navbar{
+.navbar {
     display: flex;
     align-items: center;
     padding: 10px 50px 0px 50px;
@@ -48,9 +47,9 @@ body{
     margin-left: 50px;
 }
 
-.back{
+.back {
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
@@ -58,19 +57,19 @@ body{
     background-image: url(./assets/whiteback.webp);
 }
 
-.back p{
+.back p {
     position: absolute;
-    top:63%;
+    top: 63%;
     left: 17%;
 }
 
-.back img{
+.back img {
     position: absolute;
-    top:25%;
+    top: 25%;
     left: 20%;
 }
 
-.back b{
+.back b {
     color: rgb(0, 0, 0);
     font-size: 30px;
     font-style: italic;
@@ -79,7 +78,7 @@ body{
 }
 
 
-.green{
+.green {
     background-color: rgb(22, 165, 22);
     height: 100vh;
     width: 644px;
@@ -87,7 +86,7 @@ body{
     box-shadow: 0 0px 19px 5px rgb(0, 0, 0);
 }
 
-.white{
+.white {
     background-color: rgb(255, 255, 255);
     height: 100vh;
     width: 100%;
@@ -95,15 +94,15 @@ body{
     border-radius: 10px;
 }
 
-.red{
+.red {
     background-color: rgb(201, 9, 9);
     height: 100vh;
     width: 650px;
-    margin-left: 4px; 
+    margin-left: 4px;
     border-radius: 10px;
 }
 
-.caixa_form{
+.caixa_form {
     color: white;
     display: flex;
     flex-direction: column;
@@ -113,7 +112,7 @@ body{
     background-image: url(./assets/carbon.jpg);
     height: 100vh;
     width: 100%;
-    margin-left: 4px; 
+    margin-left: 4px;
     border-radius: 10px 0px 0px 10px;
 }
 
@@ -123,26 +122,29 @@ a {
     text-decoration: none;
 }
 
-.caixa_form button{
+.caixa_form button {
     text-align: center;
     color: #010101;
-    border-color:rgb(201, 9, 9);
+    border-color: rgb(201, 9, 9);
     background-color: rgb(255, 246, 246);
     padding: 5px 10px 5px 10px;
     border-radius: 10px;
     font-style: bold;
     font-size: 20px;
     cursor: pointer;
-    transition: 0.3s;
     margin-bottom: 5px;
+    transition: 0.3s;
 }
 
-button:hover{
-    color: rgb(255, 255, 255);
-    background-color: #010101;
+button:hover {
+    cursor: pointer;
+    border: 2px solid rgb(255, 255, 255);
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+
 }
 
-.pos{
+.pos {
     margin-left: 50px;
     margin-bottom: 120px;
     display: flex;
@@ -151,17 +153,23 @@ button:hover{
     gap: 2px;
 }
 
-.msg{
+.msg {
     background-color: transparent;
     text-align: center;
 }
 
 
-input{
+input {
     font-size: 20px;
     text-align: center;
-    border:2px solid rgb(201, 9, 9);
+    border: 2px solid rgb(201, 9, 9);
     color: black;
     border-radius: 10px;
     padding: 5px 5px 5px 5px;
+    transition: 0.3s;
+}
+
+input:hover{
+    background-color: #7e0d0d;
+    color: white;
 }
