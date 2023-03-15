@@ -1,17 +1,16 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
 
 
 @font-face {
     font-family: ferrari-body;
     src: url(./assets/Ferrari-SansRegular.woff2);
-  }
+}
 
 
-  @font-face {
+@font-face {
     font-family: ferrari-title;
     src: url(./assets/Ferrari-SansMedium.woff2);
-  }
+}
 
 * {
     font-family: 'ferrari-body', sans-serif;
@@ -39,7 +38,7 @@ body {
 
 .navbar {
     /* background-color: transparent; */
-    background-color: rgb(0,0,0,0.5);
+    background-color: rgb(0, 0, 0, 0.5);
     display: flex;
     position: fixed;
     justify-content: space-between;
@@ -106,7 +105,7 @@ ul {
 .banner .content {
     position: absolute;
     z-index: 1;
-    top: 44px;
+    top: 7%;
     left: 3%;
     color: white;
 }
@@ -183,8 +182,7 @@ html {
     display: flex;
     flex-direction: column;
     align-items: center;
-    top: 2470px;
-
+    top: 350%
 }
 
 
@@ -198,7 +196,8 @@ html {
 
 
 .footer {
-    margin-top: 0;
+    border-top: 1px solid red;
+    border-radius: 10px 10px;
     width: 100%;
     display: flex;
     padding: 40px 0px 40px 0px;
@@ -213,7 +212,7 @@ html {
     font-style: italic;
 }
 
-.footertxt b{
+.footertxt b {
     border-bottom: 3px solid rgb(255, 255, 255);
     border-radius: 5px;
 }

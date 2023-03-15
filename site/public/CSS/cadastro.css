@@ -1,18 +1,19 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Kanit&display=swap');
+
 
 @font-face {
     font-family: ferrari-body;
     src: url(./assets/Ferrari-SansRegular.woff2);
-}
+  }
 
 
-@font-face {
+  @font-face {
     font-family: ferrari-title;
     src: url(./assets/Ferrari-SansMedium.woff2);
-}
+  }
 
-
-* {
+*{
     font-family: 'ferrari-body', sans-serif;
 }
 
@@ -25,21 +26,24 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: rgb(201, 9, 9);
+    background-color: #ff0000;
 }
 
-body {
+body{
     padding: 0;
     margin: 0;
+    overflow: hidden;
 }
 
 
-.banner {
+.banner{
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
+    justify-content: space-between;
+    width: 100vw;
 }
 
-.navbar {
+.navbar{
     display: flex;
     align-items: center;
     padding: 10px 50px 0px 50px;
@@ -47,29 +51,30 @@ body {
     margin-left: 50px;
 }
 
-.back {
+.back{
     display: flex;
-    align-items: center;
+    align-items:center;
     justify-content: center;
     flex-direction: column;
     height: 100vh;
     width: 50%;
     background-image: url(./assets/whiteback.webp);
-}
+}   
 
-.back p {
+.back p{
     position: absolute;
-    top: 63%;
+    top:63%;
     left: 17%;
 }
 
-.back img {
+.back img{
     position: absolute;
-    top: 25%;
+    top:25%;
     left: 20%;
 }
 
-.back b {
+
+.back b{
     color: rgb(0, 0, 0);
     font-size: 30px;
     font-style: italic;
@@ -78,7 +83,7 @@ body {
 }
 
 
-.green {
+.green{
     background-color: rgb(22, 165, 22);
     height: 100vh;
     width: 644px;
@@ -86,7 +91,7 @@ body {
     box-shadow: 0 0px 19px 5px rgb(0, 0, 0);
 }
 
-.white {
+.white{
     background-color: rgb(255, 255, 255);
     height: 100vh;
     width: 100%;
@@ -94,15 +99,15 @@ body {
     border-radius: 10px;
 }
 
-.red {
+.red{
     background-color: rgb(201, 9, 9);
     height: 100vh;
     width: 650px;
-    margin-left: 4px;
+    margin-left: 4px; 
     border-radius: 10px;
 }
 
-.caixa_form {
+.caixa_form{
     color: white;
     display: flex;
     flex-direction: column;
@@ -112,7 +117,7 @@ body {
     background-image: url(./assets/carbon.jpg);
     height: 100vh;
     width: 100%;
-    margin-left: 4px;
+    margin-left: 4px; 
     border-radius: 10px 0px 0px 10px;
 }
 
@@ -122,7 +127,7 @@ a {
     text-decoration: none;
 }
 
-.caixa_form button {
+.caixa_form button{
     text-align: center;
     color: #010101;
     border-color: rgb(201, 9, 9);
@@ -132,30 +137,23 @@ a {
     font-style: bold;
     font-size: 20px;
     cursor: pointer;
-    margin-bottom: 5px;
     transition: 0.3s;
+    margin-bottom: 20px;
 }
 
-button:hover {
+button:hover{
     cursor: pointer;
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgb(253, 253, 253);
     color: #ffffff;
     background-color: rgb(0, 0, 0);
-
 }
 
-.pos {
+.pos{
     margin-left: 50px;
-    margin-bottom: 120px;
+    margin-bottom: 100px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
-}
-
-.msg {
-    background-color: transparent;
-    text-align: center;
 }
 
 
